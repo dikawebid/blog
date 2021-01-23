@@ -1,0 +1,60 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Membuat Loading Pada Ionic
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 557
+wordpress_url: http://blog.dika.web.id/?p=557
+date: '2015-06-25 12:42:04 +0700'
+date_gmt: '2015-06-25 05:42:04 +0700'
+categories:
+- Tutorial
+- Mobile Development
+- Javascript
+- Ionic Framework
+tags: []
+comments: []
+---
+<p>Halo bro, kembali lagi saya pada postingan selanjutnya.. sebelumnya saya pernah posting tentang bagaimana sih cara menginstall ionic? dan apa sih ionic itu? coba cari aa deh di postingan saya sebelumnya atau bisa juga lihat di : <a href="http://blog.dika.web.id/?p=524" target="_blank">Installasi Ionic pada Windows 7</a></p>
+<p>Nah jika sudah tau apa itu ionic dan sudah pernah menginstallnya, yo mari kita lanjutkan aja pada inti postingan ini :D</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/06/ionic_dik.png"><img class="aligncenter size-full wp-image-534" src="http://blog.dika.web.id/wp-content/uploads/2015/06/ionic_dik.png" alt="ionic_dik" width="200" height="200" /></a><!--more-->
+	<br/>Untuk source :</p>
+
+<figure><figcaption>controller.js</figcaption></figure>
+{% highlight javascript %}
+.controller('LoadingCtrl', function($scope, $timeout, $ionicLoading) {
+	//Action tombol ng-click="showLoading()" di folder templates tab-dash.html
+	
+	$scope.showLoading = function() {
+		// Setup the loader
+		$ionicLoading.show({
+			content: 'Loading',
+			animation: 'fade-in',
+			showBackdrop: true,
+			maxWidth: 200,
+			showDelay: 0
+		});
+
+		//Sesudah loading
+		$timeout(function () {
+			//Loading di sembunyikan
+			$ionicLoading.hide();
+			//Buat di looping coeg
+			$scope.baturans = [
+				{name: 'Ferdhika', deskripsi : 'Ganteng'}, 
+				{name: 'Ikbal', deskripsi : 'Tamvan'}, 
+				{name: 'Coeg', deskripsi : 'Maho'}
+			];
+		}, 2000);
+  	};
+})
+{% endhighlight %}
+<p>nah untuk implementasi, mungkin bisa di explore sendiri.. :D</p>
+<p>Untuk yng mau download source nya, bisa di cicip disini : <a href="http://download.dika.web.id/index.php/donlod/detail/13" target="_blank">Download</a></p>
+<p>Semoga bermanfaat untuk snippet kali ini :D sampai jumpa di tutorial selanjutnya :)</p>

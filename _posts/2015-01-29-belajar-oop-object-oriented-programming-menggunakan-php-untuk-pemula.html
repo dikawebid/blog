@@ -1,0 +1,107 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Belajar OOP (Object Oriented Programming) Menggunakan PHP Untuk Pemula
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 205
+wordpress_url: http://blog.dika.web.id/?p=205
+date: '2015-01-29 14:34:50 +0700'
+date_gmt: '2015-01-29 07:34:50 +0700'
+categories:
+- Tutorial
+- PHP
+tags: 
+- Object Oriented Programming PHP
+comments:
+- id: 117
+  author: rangga
+  author_email: ranggasn@aol.com
+  author_url: ''
+  date: '2015-07-31 14:58:59 +0700'
+  date_gmt: '2015-07-31 07:58:59 +0700'
+  content: di tunggu postingan selanjutnya gan..
+- id: 237
+  author: Herdhiantoko Fathani
+  author_email: herdhiantokofathani@gmail.com
+  author_url: ''
+  date: '2015-12-10 09:22:54 +0700'
+  date_gmt: '2015-12-10 02:22:54 +0700'
+  content: Thanks gan, ditunggu lanjutannya
+---
+<p>Udah lama nih ga nulis artikel tentang tutorial programming :> Kali ini saya ingin menuliskan beberapa Tutorial Tentang Bahasa Pemrograman Berbasis Web Pake PHP. Pasti udah pada tau kan sama <strong>PHP</strong>? Bukan <strong>Pemberi Harapan Palsu</strong> yaw apalagi <strong>Penikmat Harapan Palsu</strong> haha :D. Yaap, ga perlu dijelasin lagi apa itu PHP, karena sebelumnya saya udah membahasnya Tutorial PHP ini, kali ini saya bukan mebuat tutorial PHP Dasar / Prosedural lagi, melainkan <strong>PHP OOP</strong>. Apa sih OOP itu? Terus untuk apa ?</p>
+<p><!--more--></p>
+<p>OOP singkatan dari <em>Object Oriented Programming</em>, keistimewaan dalam pembungkusan memudahkan para programmer mengarungi lautan kehidupan dalam meng-coding ria bersama pacar tercintanya eh emang punya pacar? :v, sebuah mesin penuh dengan baut, komputer :D~. Ada beberapa istilah inti dari keistimewaan OOP ini, yang paling menarik adalah <strong>class</strong>, <strong>property</strong>, <strong>method</strong>, <strong>inheritance</strong>, <strong>polymorphisme</strong>, dan? <strong>encapsulation</strong>. Apa coba itu ?!! :D</p>
+<p>Nah kenapa sih kita menggunakan OOP? mari kita bandingkan dengan pemrograman prosedural :</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th>Pemrograman Prosedural</th>
+<th>Pemrograman Berorientasi Obyek</th>
+</tr>
+<tr>
+<td>Memecah program dalam fungsi dan data</td>
+<td>Menggabungkan fungsi dan data dalam program</td>
+</tr>
+<tr>
+<td>Memiliki ciri Sequence (berurutan), Selection (pemilihan) dan Repetition (perulangan)</td>
+<td>Memiliki ciri Encapsulation (pengemasan), Inheritance (penurunan sifat) dan Polymorphism (perbedaan bentuk dan perilaku)</td>
+</tr>
+<tr>
+<td>Struktur program rumit karena berupa urutan proses dan fungsi-fungsi</td>
+<td>Struktur program ringkas, cukup dengan membuat obyek dan class lalu bekerja berdasarkan object dan class tersebut.</td>
+</tr>
+<tr>
+<td>Re-use kode program kurang</td>
+<td>Kode program terutama class sangat re-usable</td>
+</tr>
+<tr>
+<td>Tidak cocok untuk pemrograman berskala besar, salah satunya karena kurang sulitnya mengkoordinasi teamwork</td>
+<td>Sangat cocok untuk pemrograman berskala besar salah satunya karena mudah dalam pembagian teamwork</td>
+</tr>
+<tr>
+<td>Mudah diawal, namun kompleks diproses selanjutnya</td>
+<td>Sulit diawal (karena harus membuat class) namun selanjutnya akan terasa mudah dan cepat</td>
+</tr>
+<tr>
+<td>Eksekusi lebih lambat karena setiap perintah dikerjakan berurutan</td>
+<td>Eksekusi lebih cepat karena dieksekusi bersamaan, program hanya mengatur obyek, properties dan method-nya saa</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Class</strong> ini merupakan template untuk objek yang akan dibuat nantinya. Kalau diambil contoh dalam kehidupan sehari-hari. Hmmmm ? contoh kasusnya memasak telur. :D.</p>
+<p>Templatenya adalah satu keutuhan cara menggoreng si telur tersebut.</p>
+<p>Sedangkan <strong>property</strong>-nya atau variable adalah berapa banyak garam yang dibutuhkan, berapa banyak minyak yang dibutuhkan, berapa sayuran yang dibutuhkan, berapa banyak wortel, etc. (Maklum suka goreng telur di oplos sayur) :D</p>
+<p><strong>Method</strong> sendiri itu sama halnya dengan fungsi yakni bagaimana caranya telur digoreng. Seperti, apakah telurnya akan dimasukkan kedalam piring terlebih dahulu, atau apakah telurnya akan di masukkan ke katel dengan sayur yang berada di dalam katel. Atau mungkin bisa saja telurnya langsung dimasukkan kedalam perut dan gaperlu dimasak. :G ( kebanyakan coding jadi stress ) :D</p>
+<p><strong>Inheritance</strong>, dalam istilah bahasa indonesianya dikenal dengan turunan. Jelasnya turunan ini berasal dari suatu kelas induk. Kalo diambil contoh dalam&nbsp;menggoreng telur, masing-masing orang punya keunikan tersendiri dalam&nbsp;menggoreng telur, seperti dalam menggoreng telur ada orang yang mengikuti aturan&nbsp;menggoreng telur, ada juga yang senang di oplos dengan sayur seperti saya. :3</p>
+<p>Sedangkan <strong>polymorphisme</strong> itu gaya dalam menggoreng telur itu sendiri, bisa saja ketika&nbsp;menggoreng telur itu ditambah dengan kecap manis, atau sambal pedas, atau mungkin terasi. Bisa saja. Iya kan ?? :D Atau juga, ada yang suka telurnya setengah mateng, atau mungkin saja ada yang senang dengan telor yang gosong. Semua bisa saja terjadi. :v</p>
+<p>Nah dari situ timbul satu pertanyaan besar, sebenarnya OOP itu untuk apa sih ? Apakah OOP itu sebagai standarisasi cara menggoreng telor. :D</p>
+<p>OOP sering digunakan dalam pembuatan aplikasi besar, dimana ketika penambahan fitur terbaru fungsi encapsulation atau pembungkusan dalam class ini sangat berperan penting. Keuntungan lain adalah maintenance ketika ada bug yang bercokol dalam coding ataupun maintenance jenis lain. Dengan mudah terkontrol. Dan menghasilkan coding yang lebih efisien. Contoh nyata OOP yaitu button. Turunan button seperti bit button, push button dan lain-lain. Dimana button-button tersebut sebenarnya adalah bentuk lain dari button induk yang telah di berikan fitur-fitur tambahan.</p>
+<p>Implementasinya sudah jelas bukan? Kalo belum ntar ada list tutorial implementasinya lagi di bawah :D</p>
+<p>Terus apa perbedaan PHP yang biasa kita pakai (Prosedural) dengan<em> OOP (Object Oriented Programming)</em> ? Oke kita akan bahas sedikit teorinya agar mudah dipahami ketika kita prakteknya.</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/01/Oop.jpg"><img class="size-full wp-image-209 aligncenter" src="http://blog.dika.web.id/wp-content/uploads/2015/01/Oop.jpg" alt="OOP Dika" width="800" height="313" /></a>Programming secara <em>Prosedural</em> adalah gaya pemrograman yang paling mudah dipahami secara algoritmik. Jadi ketika kita pertama kali mempelajari bahasa pemrograman, kita dituntut untuk memahami program yang dibuat secara <em>algoritmik</em>. Sedangkan <strong><em>Object Oriented Programming</em></strong> adalah Pemrograman berorientasi objek yang mana OOP ini adalah pengembangan dari gaya pemrograman Prosedural. Bagi kebanyakan orang yang sudah terbiasa dengan gaya programming prosedural, biasanya akan mengalami kesulitan ketika ingin beralih ke gaya pemrograman berbasis objek. Lhaa&hellip; kenapa ?</p>
+<p>Untuk mempelajari OOP ini memang sangat disarankan bagi para<em> programmer yang sudah mahir / advanced</em>. Karena selain penguasaan dari sisi algoritmik, programmer OOP ini harus mampu menyatakan masalah kedalam bentuk objek-objek. Wajar programmer prosedural agak susah beralih ke object oriented karena mereka sudah terbiasa dengan menyatakan masalah kedalam bentuk algoritma tapi dipaksakan beralih ke bentuk objek. Tapi tenang, OOP dalam PHP tidak sulit kok. Jika kita mempelajarinya secara pelan-pelan asalkan betah di ulang-ulang dan sambil praktek, nanti juga bisa dan terbiasa juga kok. Buktinya sekarang saya sudah terbiasa dengan gaya object oriented untuk membuat program / web. Oke, saya rasa cukup untuk teori pengenalannya, kita langsung lanjut ke topik pembelajaran <strong>PHP Object Oriented Programming</strong>. :D</p>
+<p>Saya buat tahapan pembelajaran <strong>PHP Object Oriented</strong> ini mulai dari awal dan insyaallah saya akan update terus pembelajaran ini. Berikut ini adalah tahapan belajarnya. :</p>
+<ul>
+<li><a href="/2015/01/mengenal-class-property-dan-method.html" target="_blank">Mengenal Class, Property, dan Method</a></li>
+<li><a href="/2015/02/mengenal-constructors-destructors.html" target="_blank">Mengenal Constructors &amp; Destructors</a></li>
+<li><a href="/2015/02/mengenal-aksesbilitas-property-method-dengan-encapsulation.html" target="_blank">Mengenal Aksesbilitas Property dengan Encapsulation</a></li>
+<li><a href="/2015/02/mengenal-inheritance-pewarisan.html" target="_blank">Mengenal Inheritance / Pewarisan</a></li>
+<li>Mengenal Polymorphism</li>
+<li>Mengenal Final Class dan Final Method</li>
+<li>Apa itu Static, Parent dan Self ?</li>
+<li><a href="/2015/02/latihan-membuat-kalkulator-sederhana-dengan-oop.html" target="_blank">Latihan : Membuat Kalkulator Sederhana Dengan OOP</a></li>
+<li><a href="/?p=363" target="_blank">Mengenal PDO &ndash; PHP Data Object</a></li>
+<li>Latihan : Membuat Data dengan PDO dan MySQL</li>
+<li>Latihan : Melihat Data dengan PDO dan MySQL</li>
+<li>Latihan : Merubah Data dengan PDO dan MySQL</li>
+<li>Latihan : Menghapus Data dengan PDO dan MySQL</li>
+<li>Final : Membuat Aplikasi CRUD Dengan PDO &amp; MySQL</li>
+</ul>
+<p>Artikel ini akan di perbarui dan di buat tutorialnya satu persatu jika saya ada waktu hehe, maklum sibuk pekerjaan sekolah numpuk banyak.. :D Bookmark aja kalo perlu buat ngikutin pembelajarannya :D</p>
+<p>Semoga bermanfaat :D</p>

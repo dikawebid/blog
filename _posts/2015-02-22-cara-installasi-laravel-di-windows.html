@@ -1,0 +1,58 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Cara Installasi Laravel di Windows
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 340
+wordpress_url: http://blog.dika.web.id/?p=340
+date: '2015-02-22 17:17:16 +0700'
+date_gmt: '2015-02-22 10:17:16 +0700'
+categories:
+- Tutorial
+- Web Development
+- PHP
+- Laravel
+tags: []
+comments: []
+---
+<p>Sore bro, weekend ga kemana mana nih? masi depan lepi aja? wkwk sama.. :3 maklum beginilah kehidupan jomblo :v oke, waktu itu saya pernah posting ini sebelumnya di blog satunya lagi, namun blog itu udah jarang aktif lagi semenjak adanya blog pribadi ini.. :D haha kaya udah move on dari mantan aja :v oke langsung aja yaw.. :D</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/laravel.png"><img class="aligncenter size-full wp-image-341" src="http://blog.dika.web.id/wp-content/uploads/2015/02/laravel.png" alt="laravel" width="200" height="186" /></a><!--more-->
+  <br/>Laravel adalah sebuah framework PHP yang masih muda, namun demikian Laravel terus naik daun dalam kalangan programmer web. Laravel dibangun dengan beberapa komponen dari framework Symfony yang terkenal itu, sehingga memiliki landasan yang kuat dengan kode teruji dan handal.</p>
+<p>Disini saya menggunakan alat tempur :</p>
+<ul>
+<li>XAMPP (Web Server)</li>
+<li>Composer Setup</li>
+</ul>
+<h5><strong>Kebutuhan Server :</strong></h5>
+<p>Berikut kebutuhan minimun framework Laravel</p>
+<ul>
+<li>PHP >= 5.4</li>
+<li>Mcrypt PHP Extension</li>
+<li>OpenSSL PHP Extension</li>
+<li>Mbstring PHP Extension</li>
+</ul>
+<p>Jika kebutuhan server sudah memenuhi kini tinggal kita melakukan instalasi framework Laravel, jika sahabat menggunakan bundelan dari XAMPP atau yang lainnya kemungkinan kebutuhan server sudah terpenuhi. Perlu diingat bahwa kita perlu <b>terkoneksi ke internet</b> untuk melakukannya.</p>
+<h5><strong>Cara Instalasi :</strong></h5>
+<p><b>Langkah 1 :</b><br />
+Instalasi Laravel di Windows terbilang cukup mudah dibandingkan dengan distro Linux. Sebelum melakukan instalasi Laravel ada baiknya sahabat mengecek apakah ekstensi <b>openssl </b>di <b>php.ini</b> sudah diaktifkan atau belum karena Laravel memerlukan ekstensi ini dalam mode CLI, jika belum silahkan buka php.ini untuk mengaktifkan ekstensi <b>openssl </b>dan cari tulisan <b>;extension=php_openssl.dll</b> kemudian hilangkan tanda <b>titik koma (;)</b> didepannya dan simpan perubahan pada php.ini</p>
+<p><b>Langkah 2 :<br />
+</b>Langkah selanjutnya adalah kita memerlukan&nbsp;Composer untuk instalasi dan depensi manajemen framework Laravel, silahkan download <a href="http://download.dika.web.id/index.php/donlod/detail/7" target="_blank">Composer-Setup.exe</a>&nbsp;terlebih dahulu dan install.</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-245.png"><img class="aligncenter size-medium wp-image-342" src="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-245-300x233.png" alt="RPL4rt Studio capture #245" width="300" height="233" /></a>
+  <br/>Pada gambar di atas lokasi PHP saya adalah di <b>C:\xampp\php\php.exe</b>, nah silahkan sesuaikan dengan lokasi PHP anda.</p>
+<p><b>Langkah 3 :</b><br />
+Buka&nbsp;command prompt, kemudian pindah ke direktori htdocs dengan ketik&nbsp;<b>cd C:\xampp\htdocs</b> (silahkan sesuaikan dengan lokasi htdocs sahabat). Ketikan perintah di command prompt sebagai berikut untuk instalasi Laravel versi terbaru:</p>
+<blockquote>composer create-project laravel/laravel laravel/projectperatama --prefer-dist</blockquote>
+<p>Silahkan ganti <b>projectpertama</b> sesuai dengan keinginan sobat, sekali lagi perlu diingat bahwa sahabat perlu <b>terkoneksi ke internet</b> untuk melakukan instalasi.<br />
+Setelah instalasi selesai silahkan buka Laravel di lokasi <b>C:\xampp\htdocs\laravel\projectpertama</b></p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-244.png"><img class="aligncenter wp-image-343 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-244.png" alt="RPL4rt Studio capture #244" width="673" height="342" /></a>Selesai.</p>
+<p>Catatan: Jika sahabat sudah melakukan langkah 1-3, untuk berikutnya bila ingin menginstall lagi Laravel cukup lakukan <b>langkah 3</b> saja.<br />
+Sekarang kamu tinggal tes di browser dengan membuka url <b>http://localhost/laravel/projectpertama/public</b> jika muncul gambar seperti di bawah berarti anda sukses menginstall laravel di windows anda.. :D</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-246.png"><img class="aligncenter size-medium wp-image-344" src="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-246-300x180.png" alt="RPL4rt Studio capture #246" width="300" height="180" /></a>
+  <br/>Sekian postingan ini saya buat, semoga bermanfaat.. :D</p>
+<p>Source : http://laravel.com/docs/5.0</p>

@@ -1,0 +1,161 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: 'PHP Snippet : Mengenal Namespace'
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 383
+wordpress_url: http://blog.dika.web.id/?p=383
+date: '2015-03-19 22:20:37 +0700'
+date_gmt: '2015-03-19 15:20:37 +0700'
+categories:
+- Tutorial
+- PHP
+tags: []
+comments:
+- id: 111
+  author: Eki saputra
+  author_email: eqqi33@gmail.com
+  author_url: ''
+  date: '2015-07-10 16:03:41 +0700'
+  date_gmt: '2015-07-10 09:03:41 +0700'
+  content: Nice posting bro :D
+---
+<p>Haha malem malem mapir di webnya id-laravel dan nemuin artikel tentang namespace.. wkwk udah tau lama sih ni postingan, tapi baru sekarang saya mau re-post.. karna waktu itu belum punya blog ini :g. Jika kalian pernah belajar Java atau C#, maka namespace bukan merupakan hal baru. Tapi jika kalian seorang programmer fanatik PHP (saking fanatiknya tidak tertarik belajar bahasa pemrograman yang lain) maka namespace, yang baru muncul di PHP versi 5.3, merupakan mainan baru haha :v. Dan sebagaimana layaknya mainan baru, kita pasti penasaran apa sih yang bisa dilakukan mainan baru bernama namespace ini. So, mari kita jelajahi satu persatu bersama <del>mantan </del>saya.. :3</p>
+<p><!--more--></p>
+<h3 id="apa-itu-namespace">Apa Itu Namespace?</h3>
+<p>Apakah kalian pernah mengalami tidak bisa membuat sebuah <code>class</code> hanya karena namanya sudah dipakai di tempat lain? Apakah kalian pernah menulis kode seperti di bawah ini hanya untuk memastikan bahwa nama <code>function</code> yang kalian buat tidak bentrok dengan <code>function</code> di tempat lain? biasanya sih kalo pake framework ci pernah :D</p>
+{% highlight php %}
+if ( ! function_exists('terbilang')){
+    function terbilang($number){
+        //to do code here
+    }
+}
+{% endhighlight %}
+
+<p>Atau kalian pernah menemukan nama class yang sangat panjang dan kelihatan seperti jemuran pakaian seperti ini:</p>
+
+{% highlight php %}
+class Zend_Cache_Backend_Apc extends Zend_Cache_Backend implements Zend_Cache_Backend_ExtendedInterface{
+    ...
+}
+{% endhighlight %}
+
+<p>Jika kalian pernah mengalami salah satu kejadian di atas, maka kalian patut bersyukur sekarang karena bahasa yang kita cintai ini akhirnya mengijinkan kita untuk menjadi programmer yang lebih berkelas. Dengan namespace, kalian ga perlu takut <code>function</code> yang kalian buat memiliki nama yang sama dengan <code>function</code> yang lain. Dengan namespace, kalian bisa memberi nama <code>class</code> dengan lebih singkat dan jelas, tidak perlu lagi menambahkan prefix <strong>Embel_embel_ga_penting_</strong>. Dengan namespace, kalian bisa mengorganisis kode dengan lebih rapi dan terstruktur, sehingga lebih mudah di-<em>maintenance</em>.</p>
+<p>Cara kerja namespace mirip dengan cara kerja folder dan file. Dalam satu folder kita tidak bisa membuat 2 buah file dengan nama yang sama. Tetapi hal tersebut bisa dilakukan jika foldernya berbeda. Misalnya kamu punya folder C:\Users\dadang dan C:\Users\icih, maka di masing-masing folder tersebut kalian bisa membuat file dengan nama yang sama, misalnya suratcinta.txt. Selanjutnya kalian bisa merefer kedua file tersebut dengan C:\Users\dadang\suratcinta.txt dan C:\Users\icih\suratcinta.txt. Jika tidak percaya silakan dicoba sendiri :) Namespace menjadi semacam pembungkus (encapsulation) untuk kode-kode di dalamnya, sehingga masing-masing kode memiliki identifier yang unik.</p>
+<h3 id="bagaimana-membuat-namespace">Bagaimana Membuat Namespace?</h3>
+<p>Untuk mempelajari bagaimana membuat namespace, mari kita praktekkan dengan contoh sederhana. Buat beberapa file php dengan struktur seperti berikut:</p>
+{% highlight none %}
+Meka
+    -Student.php
+Rpl
+    -Student.php
+index.php
+{% endhighlight %}
+<p>dan berikut code yng terdapat dalam file file tersebut :</p>
+<figure><figcaption>Meka/Student.php</figcaption></figure>
+{% highlight php %}
+<?php 
+class Student {
+	public function kenalan(){
+		echo "Halo bro saya dari jurusan Mekatronika";
+	}
+}
+{% endhighlight %}
+<figure><figcaption>Rpl/Student.php</figcaption></figure>
+{% highlight php %}
+class Student {
+	public function kenalan(){
+		echo "Halo bro saya dari jurusan Rekayasa Perangkat Lunak";
+	}
+}
+{% endhighlight %}
+<p>dan ini untuk file yng di panggil</p>
+
+<figure><figcaption>index.php</figcaption></figure>
+{% highlight php %}
+<?php 
+include 'Rpl/Student.php';
+include 'Meka/Student.php';
+
+//dika anak jurusan RPL
+$dika = new Student();
+$dika->kenalan();
+
+echo '<br />';
+
+//andi anak jurusan Meka
+$andi = new Student();
+$andi->kenalan();
+{% endhighlight %}
+
+<p>Jika kita jalankan file index.php, maka akan muncul error seperti berikut:</p>
+{% highlight none %}
+    Fatal error: Cannot redeclare class Student in C:\xampp\htdocs\snippet\namespace\Meka\Student.php on line 2
+{% endhighlight %}
+<p>Yuhu <del>mantan</del> juga tau kalau kita ga boleh buat class dengan nama yang sama. Eits, tapi itu dulu pas bareng <del>mantan</del>. Sekarang hal tersebut mungkin dilakukan dengan menggunakan namespace. Saya ga tau apakah <del>mantan</del> mengikuti perkembangan PHP dan sudah mengetahui hal ini. :silly:</p>
+<p>Untuk mengatasi error di atas, mari kita tambahkan namespace ke masing-masing class.</p>
+
+<figure><figcaption>Meka/Student.php</figcaption></figure>
+{% highlight php %}    
+<?php 
+namespace Meka; //deklarasi namespace
+
+class Student {
+
+	public function kenalan(){
+		echo "Halo bro saya dari jurusan Mekatronika";
+	}
+}
+{% endhighlight %}
+
+<figure><figcaption>Rpl/Student.php</figcaption></figure>
+{% highlight php %}  
+<?php 
+namespace Rpl; //deklarasi namespace
+
+class Student {
+
+	public function kenalan(){
+		echo "Halo bro saya dari jurusan Rekayasa Perangkat Lunak";
+	}
+}
+{% endhighlight %}
+
+<p>Refresh browser nya coba bro, masih error ga? Haha pasti elor :v, sama seperti file suratcinta.txt tadi, ketika kalian menggunakan namespace (membungkus file dengan folder), maka untuk mengakses semua resource dalam namespace tersebut kalian harus menulisnya dengan full path. Pada contoh di atas, jika hanya ditulis <code>Student</code> saja maka akan terjadi kebingungan, yang dimaksud <code>Student </code>itu yang mana. Apakah <code>Student </code>itu yang ada di Meka atau <code>Student</code> yang ada di RPL?</p>
+<p>Untuk itu kita modif sedikit file index.php menjadi seperti ini:</p>
+<figure><figcaption>index.php</figcaption></figure>
+{% highlight php %}
+<?php 
+namespace Rpl;
+
+include 'Rpl/Student.php';
+include 'Meka/Student.php';
+
+//dika anak jurusan RPL
+$dika = new \Rpl\Student();
+$dika->kenalan();
+
+echo '<br />';
+
+//andi anak jurusan Meka
+$andi = new \Meka\Student();
+$andi->kenalan();
+{% endhighlight %}
+
+<p>Coba refresh kembali browser kalian dan perhatikan hasilnya.</p>
+{% highlight none %}
+Halo bro saya dari jurusan Rekayasa Perangkat Lunak
+
+Halo bro saya dari jurusan Mekatronika
+{% endhighlight %}
+<p>Horeee selamat, kalian telah berhasil membuat namespace pertama kalian di PHP. Nih buat yang penasaran seperti saya, kenapa menggunakan karakter backslash <code>'\'</code> sebagai karakter penanda namespace, silakan baca <a href="https://wiki.php.net/rfc/namespaceseparator">penjelasan resmi dari PHP</a>.</p>
+<p>Nah segitu aja dulu, kalo mau liat yang lebih bisa ke websitenya id-laravel.com :D</p>
+<p>Sampai jumpa di postingan berikutnya :)) Semoga bermanfaat :D</p>
+<p style="text-align: center;"><a href="http://download.dika.web.id/index.php/donlod/detail/10" target="_blank">Download Hasil</a></p>
+<p>Source : id-laravel.com</p>

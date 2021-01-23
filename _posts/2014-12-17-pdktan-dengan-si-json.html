@@ -1,0 +1,61 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: PDKTan Dengan si JSON
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 96
+wordpress_url: http://blog.dika.web.id/?p=96
+date: '2014-12-17 18:10:27 +0700'
+date_gmt: '2014-12-17 11:10:27 +0700'
+categories:
+- Web Development
+tags:
+- JSON
+comments: []
+---
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2014/12/wp_logo_json_tipo.png"><img class="size-full wp-image-97 alignleft" src="http://blog.dika.web.id/wp-content/uploads/2014/12/wp_logo_json_tipo.png" alt="wp_logo_json_tipo" width="300" height="125" /></a>Sore sore gini enaknya ngapain ya, kalo selain dengerin lagu sambil nongkrongin depan laptop kesayangan.. Lapar? engga sih, barusan baru makan mie goreng.. oh iya sekarang bulan desember ya? ga kerasa udah mau ganti tahun aja.. padahal kaya barusan ganti tahun ke 2014, eh sekarang udah mau 2015 aja.</p>
+<p><!--more--> Berhubung sekarang saya udah kelas 3 SMK dan mau keluar sekolah internet di lab sekolah mendadak cepat.. Giliran udah mau keluar eh malah bagus, kenapa ga dari dulu aja coba?? -_- oh iya saya lupa kalo sekarang saya mau ngepost apa.. di postingan kali ini saya mau berbagi sedikit tentang &ldquo;<strong>Apa sih JSON itu&hellip;???</strong>&ldquo;. Tapi mungkin terdengar sudah basi dan sudah banyak yang membahas di internet. Tapi bagi yng belum tau mari kita <strong>PDKT</strong> sama si JSON ini, tapi awas ya yng udah punya pacar.. Bisi ketauan selingkuh haha :laughing:</p>
+<p>Oke JSON menurut saya adalah sebuah format pertukaran data berupa teks antara sisi client dengan sisi server. Hampir mirip dengan XML yang lebih dulu muncul dan populer. <strong>JSON</strong> yang mempunyai kepanjangan <strong>Javascript Object Notation</strong> merupakan syntax javascript yang mendeskripsikan object data. Lebih mudah dibaca dan lebih ringan dibandingkan XML. Karena JSON lebih sedikit membutuhkan space dan tidak perlu dituliskan dengan lengkap layaknya XML. Sehingga secara logika, proses pengolahannya (biasa disebut parsing) lebih cepat. Secara pribadi, saya lebih suka menggunakan JSON dibandingkan XML karena memang terbilang cukup mudah.</p>
+<p>Dalam format penulisan, JSON diapit oleh atribut sebagai identitasnya. Berbeda dengan XML yang diapit oleh tag. JSON dapat dituliskan seperti di bawah ini :</p>
+{% highlight json %}
+{
+	"murid" : [
+		{
+			"nama" : "Ferdhika Yudira",
+			"alamat" : "Lembang"
+		},
+		{
+			"nama" : "Muhammad Nurjaman",
+			"alamat" : "Cihanjuang"
+		},
+		{
+			"nama" : "Muhammad Fauzan",
+			"alamat" : "Ciawitali"
+		}
+	]
+}
+{% endhighlight %}
+
+<p>Syntaxnya menjadi lebih sederhana kan jika dibandingkan dengan XML. JSON banyak digunakan untuk aplikasi interaktif seperti aplikasi chatting di platform aplikasi mobile, contohnya android. Data yang tersimpan di dalam database server yang menggunakan MySQL dapat langsung di-<em>generate </em>ke dalam format JSON. Dengan menggunakan fungsi CONCAT() dan GROUP_CONCAT() yang dimilik MySQL. Sehingga kita tidak perlu repot-repot membuat formatnya di dalam file PHPnya. Berikut contoh penggunaannya :</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2014/12/RPL4rt-Studio-capture-185.png"><img class="alignnone size-medium wp-image-100" src="http://blog.dika.web.id/wp-content/uploads/2014/12/RPL4rt-Studio-capture-185-300x98.png" alt="RPL4rt Studio capture #185" width="300" height="98" /></a></p>
+<p>Dari tabel di atas, saya hanya ambil field nama dan alamat. Kemudian langsung di generate ke dalam XML yang query-nya sudah digabungkan dengan fungsi GROUP_CONCAT().</p>
+
+{% highlight sql %}
+SELECT
+	CONCAT("{'siswa' : [",
+		GROUP_CONCAT(
+			CONCAT("{'nama':'",nama,"'"),
+			CONCAT(",'alamat':'",alamat,"'}")
+		)
+	,"] }")
+AS json FROM tb_murid
+{% endhighlight %}
+
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2014/12/RPL4rt-Studio-capture-186.png"><img class="alignnone size-medium wp-image-101" src="http://blog.dika.web.id/wp-content/uploads/2014/12/RPL4rt-Studio-capture-186-300x162.png" alt="Hasil Concat" width="300" height="162" /></a></p>
+<p>JSON ini sangat bermanfaat sebagai media pertukaran data untuk pengembangan aplikasi android yang membutuhkan database online. Oke deh udah adzan, sekian dulu postingan singkat saya kali ini. Semoga bermanfaat untuk kita semua..</p>

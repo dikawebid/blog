@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Share Localhost Ke Public Internet Menggunakan NGROK
+author: dika
+wordpress_id: 701
+wordpress_url: http://blog.dika.web.id/?p=701
+date: '2016-06-18 12:45:20 +0700'
+date_gmt: '2016-06-18 05:45:20 +0700'
+categories:
+- Tips & Trik
+tags:
+- NGROK
+comments: []
+---
+<p>Mungkin kita pernah sedang mendapatkan <em>project</em> berbasis web dari client dan ingin melihat progress dari web yang sedang kita kerjakan dan ingin mencoba aplikasi yang kita buat secara langsung. Sebenarnya kita bisa saja mengupload hasil kerja kita ke website baik itu ke web server ataupun hosting, namun itu cukup merepotkan dan membutuhkan waktu yang lebih karena harus mengkonfigurasi ini itu.</p>
+<p><!--more--></p>
+<p class="text-center">
+  <img src="https://ngrok.com/static/img/demo.png" alt="" width="1200" height="800" /> <br/>Ngrok</p>
+<p>Namun kerepotan kita diatas akan terjawab oleh sebuah aplikasi yang bernama <em><strong>ngrok</strong></em>. Ngrok adalah sebuah program yang menciptakan tunneling dari internet public (https://sub.ngrok.io) ke port komputer lokal anda. Anda dapat membagikan url yang anda dapatkan ke klien atau ke teman anda sehingga orang lain bisa melihat hasil kerja kita dengan mengakses url yang sudah kita ciptakan menggunakan program ngrok ini tanpa harus repot-repot mengupload hasil project anda ke web server ataupun hosting dengan catatan web server lokal anda dalam keadaan <em>running</em> sehingga kita bisa menghemat waktu.</p>
+<p>Pada kasus untuk mencoba ngrok ini, saya menggunakan sistem operasi windows 10 dan XAMPP sebagai package server.</p>
+<h3>Konfigurasi NGROK</h3>
+<p>Pertama download ngrok dan pilih sesuai dengan sistem operasi anda. (<a href="https://ngrok.com/download" target="_blank">Download NGROK</a>)</p>
+<p>Kemudian ekstrak file ngrok tadi di dalam direktori mana saja. dalam contoh disini, saya menyimpan file ngrok dalam drive D:/Program Files</p>
+<p>Setelah itu, masuk ke direktori dimana file ngrok tadi di simpan, dan tekan <code>shift + click kanan</code> dan pilih menu open command window here sehingga membuka command prompt dengan lokasi path direktori kita tadi.</p>
+<p>Ketik perintah di bawah pada command prompt untuk melihat perintah-perintah pengoprasiannya.</p>
+<blockquote><p>ngrok http/tcp port</p></blockquote>
+<p>Contoh disini saya menggunakan port 80</p>
+<blockquote><p>ngrok http 80</p></blockquote>
+<p>Maka akan muncul domain forwarding yang ada pada command prompt. Domain forwarding inilah yang akan kita share kepada public untuk mengakses untuk menguji hasil kerja kita yang masih di lokal server.</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-166.png"><img class="aligncenter wp-image-703 size-full" src="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-166.png" alt="Screenshot Studio capture #166" width="961" height="516" /></a>ketika diakses url forward, maka akan terlihat seperti ini pada command prompt anda :</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-167.png"><img class="aligncenter wp-image-704 size-full" src="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-167.png" alt="Screenshot Studio capture #167" width="961" height="513" /></a>Dan ini adalah tampilan pada domain forwarding yang diakses pada browser dan sama hasilnya sama dengan di web server lokal.</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-168.png"><img class="aligncenter wp-image-705 size-large" src="http://blog.dika.web.id/wp-content/uploads/2016/06/Screenshot-Studio-capture-168-1024x500.png" alt="Screenshot Studio capture #168" width="560" height="273" /></a>
+  <br/>Program ini sangat membantu sekali, kita tidak harus membuang waktu lagi dengan mengupload dan mengkonfigurasi ke web server atau hosting yang kita miliki hanya untuk pengujian sementara.</p>
+<p>Sekian tutorial kali ini, semoga bermanfaat :)</p>

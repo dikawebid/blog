@@ -1,0 +1,83 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Deploy Wordpress ke Heroku
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 396
+wordpress_url: http://blog.dika.web.id/?p=396
+date: '2015-03-22 11:35:34 +0700'
+date_gmt: '2015-03-22 04:35:34 +0700'
+categories:
+- Tutorial
+- PHP
+- Wordpress
+tags: []
+comments: []
+---
+<p>Halo bro, kali ini saya akan memposting artikel gimana sih cara nge-hosting <span id="result_box" class="" lang="id"><span class="hps">WordPress</span> <span class="hps">pada</span> <span class="hps">Heroku</span><span class="">.</span> <span class="hps">Ini</span> <span class="hps">akan membutuhkan</span> <span class="hps">prosedur yang sama seperti</span> <span class="hps">yang terlibat</span> <span class="hps">dalam mendirikan</span> <span class="hps">aplikasi</span> <span class="hps">PHP</span><span class="">,</span> <span class="hps">bersamaan dengan itu</span> <span class="hps">kita</span> <span class="hps">akan</span> <span class="hps">mengkonfigurasi</span> <span class="hps">aplikasi kita</span> <span class="hps">untuk bekerja</span> <span class="hps">dengan</span> <span class="hps">database</span><span class="">,</span> <span class="hps">yang juga</span> <span class="hps">disediakan oleh</span> <span class="hps">Heroku</span> <span class="hps">yaitu </span>ClearDB<span class="hps">(database</span> <span class="hps">MySQL</span>)<span class="">.</span></span></p>
+<p><!--more--></p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/03/deploy-wordpress-on-heroku.jpg"><img class="aligncenter wp-image-397 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/03/deploy-wordpress-on-heroku.jpg" alt="deploy-wordpress-on-heroku" width="650" height="350" /></a><strong><span id="result_box" class="" lang="id"><span class="hps">Catatan</span>: <span class="hps">Tutorial ini</span> <span class="hps">tidak menunjukkan</span> <span class="hps">bagaimana bermigrasi</span> <span class="hps">blog</span> <span class="hps">Anda</span> <span class="hps">yang ada untuk di deploy ke</span> <span class="hps">Heroku</span>.</span></strong></p>
+<p>Ayo kita mulai, disini saya akan memberikan tutorial secara instant dan rada banyak ngetik dikit :D Oh iya, daftar dulur di <a href="http://heroku.com" target="_blank">Heroku </a>nya bro..</p>
+<p>Nah kalo udah mari kita mulai, dengan cara pertama..</p>
+<h2>Deploy ke Heroku pake Button Heroku</h2>
+<p><span id="result_box" class="" lang="id"><span class="hps">Kamu bisa buat</span><span class="hps"> sendiri</span> <span class="hps">WordPress</span> <span class="hps">dengan</span> <span class="hps">menggunakan</span> <span class="hps">tombol</span> <span class="hps">Heroku</span> <span class="hps">bawah :<br />
+</span></span></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/ferdhika31/Heroku-Wordpress" target="_blank"><img class="alignnone" src="https://www.herokucdn.com/deploy/button.png" alt="" width="147" height="32" /></a></p>
+<p>Udah gitu, silahkan isi konfigurasi username, password untuk login ke halaman wordpress kamu..</p>
+<h2>Deploy ke Heroku pake Command Line</h2>
+<p>Dan ini untuk cara keduanya bro, kalian harus udah download dulu apps heroku-toolbelt nya:</p>
+<ol>
+<li><a href="http://download.dika.web.id/index.php/donlod/detail/11" target="_blank">Download for Windows</a></li>
+<li>Download for Mac Os X</li>
+<li>Download for Ubuntu/Debian</li>
+</ol>
+<p>nah udah gitu install dulu GIT nya kalo belum pernah di install, kalo yang belum tau apa itu git. bisa lihat dulu postingan saya sebelumnya tentang <a href="/?p=267" target="_blank">Apa Itu Git</a>? kalo udah pernah install, yo mari kita ke langkah selanjutnya :D</p>
+<ol>
+<li>Clone repository
+{% highlight bash %}
+  git clone https://github.com/ferdhika31/Heroku-Wordpress.git
+{% endhighlight %}
+</li>
+<li>Buat Aplikasi Heroku
+{% highlight bash %}
+  cd wordpress && heroku create nama-aplikasi
+{% endhighlight %}
+</li>
+<li>Install Plugin ClearDB
+{% highlight bash %}
+heroku addons:add cleardb:ignite
+{% endhighlight %}
+</li>
+<li>Install Plugin New Relic
+{% highlight bash %}
+heroku addons:add newrelic:stark
+{% endhighlight %}
+</li>
+<li>Install Plugin SendGrid
+{% highlight bash %}
+heroku addons:add sendgrid:starter
+{% endhighlight %}
+</li>
+<li>Deploy aplikasi ke Heroku
+{% highlight bash %}
+git push heroku master
+{% endhighlight %}
+</li>
+<li>Buka aplikasi heroku ke browser :
+{% highlight bash %}
+heroku open
+{% endhighlight %}
+</li>
+<li>Buat user admin dan passwordnya</li>
+<li>Done :)</li>
+</ol>
+<p>Nah gimana, lancar jaya ga? :D kalo ngga bisa di isi formulir komentar nya :D<br />
+Untuk live demo bisa di liat di : <a href="https://dika-wp.herokuapp.com/" target="_blank">https://dika-wp.herokuapp.com/</a><br />
+Semoga bermanfaat, sampai jumpa :))</p>
+<p>&nbsp;</p>

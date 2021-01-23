@@ -1,0 +1,97 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Installasi Ruby on Rails di Windows
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 604
+wordpress_url: http://blog.dika.web.id/?p=604
+date: '2015-08-10 15:28:00 +0700'
+date_gmt: '2015-08-10 08:28:00 +0700'
+categories:
+- Tutorial
+- Ruby On Rails
+tags: []
+comments:
+- id: 423
+  author: jaka
+  author_email: jaka@primasaja.com
+  author_url: ''
+  date: '2016-02-24 09:29:10 +0700'
+  date_gmt: '2016-02-24 02:29:10 +0700'
+  content: thanks gan tutorialnya
+---
+<p>Selamat malam sobat, mumpung kuliah belum mulai dan masa kontrak kantor udah abis, saya jadi iseng2 coba mainan Rails. Jadi Rails ini adalah salah satu Frameworknya Ruby dan tentu saja berbasis MVC (Model View Controller). Selain Rails ada juga framework Ruby yang lain yaitu Sinatra dkk. Oke langsung aja karena lepu yang saya pake sekarang ini windows 10, jadi saya kasi tau instalasi Ruby on Rails di windows10. Mungkin bakal ada sedikit problem dalam masalah penginstallan, jadi simak baik2 sob :D <!--more--> 
+  <br/>
+  <a href="http://blog.dika.web.id/wp-content/uploads/2015/08/Ruby_on_Rails.png"><img class="aligncenter size-medium wp-image-605" src="http://blog.dika.web.id/wp-content/uploads/2015/08/Ruby_on_Rails-231x300.png" alt="Ruby_on_Rails" width="231" height="300" /></a> &nbsp; 
+  <br/>Tools yang saya gunakan sekarang :
+</p>
+<ul>
+<li>OS : Windows 10 Build [Version 10.0.10240]</li>
+<li>ruby 2.2.2p95 (2015-04-13 revision 50295) [x64-mingw32]</li>
+<li>Rails 4.2.3</li>
+</ul>
+<p>Oke mari kita mulai, ikutin step by stepnya yaa :D</p>
+<ol>
+<li>Download dan instal Ruby di <a href="http:///rubyinstaller.org/downloads">rubyinstaller.org/downloads</a>. Disini saya menggunakan Ruby versi ruby 2.2.2p95 (2015-04-13 revision 50295) [x64-mingw32]. Ketik ruby -v pada cmd (command prompt) jika menemukan error <strong><em>'ruby' is not recognized as an internal or external command,</em></strong> <strong><em> operable program or batch file</em></strong>. kamu belum menambahkannya ke path windowsnya..</li>
+<li>Install Rails dengan cara masuk ke command prompt hasil dari instalan Ruby tadi. Saya install pada direktori C:\Ruby22-x64.
+<ul>
+<li>Download dan install devkit dari <a href="http://rubyinstaller.org/downloads" target="_blank">rubyinstaller.org/downloads</a>.</li>
+<li>Extract devkit ke c:\devkit</li>
+<li>Masuk ke command prompt dan ketikkan perintah <em><strong>ruby dk.rb init</strong></em> lalu <em><strong>ruby dk.rb install</strong></em></li>
+</ul>
+</li>
+<li>Lalu sesudah itu, mari kita install ruby dengan cara mengetikan perintah <strong><em>gem install rails.<a href="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-1.png"><img class="aligncenter wp-image-607 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-1.png" alt="Screenshot Studio capture #1" width="860" height="453" /></a></em></strong></li>
+<li>Untuk membuat aplikasi baru ketikkan perintah <strong><em>rails new </em></strong>. pada contoh sekarang, saya membuat nama aplikasi "<strong>test</strong>".. <strong><em>rails new hello</em></strong>. Setelah itu akan tercipta folder <em><strong>hello </strong></em>di dalam direktori user
+<ul>
+<li><strong>app/</strong> :&nbsp;Contains the controllers, models, views, helpers, mailers and assets for your application. You&rsquo;ll focus on this folder for the remainder of this guide.</li>
+<li><span id="result_box" class="" lang="id"><span class="hps"><strong>bin/</strong> : </span><span class="">Contains the rails script that starts your app and can contain other scripts you use to deploy or run your application.</span></span></li>
+<li><strong>config/</strong> : Configure your application&rsquo;s routes, database, and more.</li>
+<li><strong>config.ru</strong> : Rack configuration for Rack based servers used to start the application.</li>
+<li><strong>db/</strong> : Contains your current database schema, as well as the database migrations.</li>
+<li><strong>Gemfile</strong></li>
+<li><strong>Gemfile.lock</strong></li>
+<li><strong>lib/</strong> : Extended modules for your application.</li>
+<li><strong>log/ : </strong>Application log files.</li>
+<li><strong>public/</strong> : Contains static files and compiled assets.</li>
+<li><strong>Rakefile</strong></li>
+<li><strong>README.rdoc</strong> : <span id="result_box" class="short_text" lang="en"><span class="hps">Explanation</span> <span class="hps">manual</span> <span class="hps">of your</span> <span class="hps">application</span></span></li>
+<li><strong>test/</strong> : Unit tests, fixtures, dan test apparatus</li>
+<li><strong>tmp/</strong> : file temporary cache, pid, and session</li>
+<li><strong>vendor/</strong> : <span id="result_box" class="short_text" lang="en"><span class="hps">where</span> <span class="hps">to</span> <span class="hps">put the</span> <span class="hps">library</span> <span class="hps">of</span> <span class="hps">third parties</span></span></li>
+</ul>
+</li>
+<li>Setelah itu, pindah ke direktori <strong>hello </strong>dengan mengetikan perintah <em><strong>cd hello.</strong></em></li>
+<li>Jalankan web server dengan mengetikkan <strong><em>rails server</em></strong>. Web server disini sama dengan web server yang lain seperti apache dan nginx. Perintah tersebut akan menjalankan web server WEBrick.<a href="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-6.png"><img class="aligncenter wp-image-609 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-6.png" alt="Screenshot Studio capture #6" width="858" height="456" /></a></li>
+<li>Ketikkan url http://localhost:3000 pada address bar di browser dan akan muncul halaman seperti di bawah.<a href="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-8.png"><img class="aligncenter wp-image-610 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/08/Screenshot-Studio-capture-8.png" alt="Screenshot Studio capture #8" width="807" height="575" /></a></li>
+<li>Untuk menghentikkan server, cukup menekan tombol <strong>CTRL+C.</strong></li>
+<li>Done</li>
+</ol>
+<h4><strong>Membuat Controller :</strong></h4>
+<ol>
+<li>ketikkan <strong>rails generate controller welcome index </strong>pada command prompt dan akan menghasilkan file : create app/controllers/welcome_controller.rb route get 'welcome/index' invoke erb create app/views/welcome create app/views/welcome/index.html.erb invoke test_unit create test/controllers/welcome_controller_test.rb invoke helper create app/helpers/welcome_helper.rb invoke test_unit invoke assets invoke coffee create app/assets/javascripts/welcome.coffee invoke scss create app/assets/stylesheets/welcome.scss</li>
+<li>Hal yang terpenting adalah controller di <strong>app/controllers/welcome_controller.rb</strong> dan view <strong>app/views/welcome/index.html.erb</strong></li>
+<li>Setelah itu, kita coba running server dengan mengetikkan <strong>rails server</strong> dan akses url <strong>http://localhost:3000/welcome/index</strong> pada address bar browser.</li>
+<li>Selesai :D</li>
+</ol>
+<h4><strong>Setting halaman home:</strong></h4>
+<p>Buka file <strong>config/routes.rb</strong> dan hilangkan komentar pada <em>root &lsquo;welcome#index&rsquo;</em>. Perintah tersebut akan membuat Ruby menjalankan controller welcome dan method index. Yang akan menampilkan file dari <strong>app/views/welcome/index.html.erb</strong> pada halaman awal..</p>
+<h4><strong>Problem Solving :</strong></h4>
+<ul>
+<li><a href="http://stackoverflow.com/questions/17643897/cannot-load-such-file-sqlite3-sqlite3-native-loaderror-on-ruby-on-rails" target="_blank">'requier': cannot load such file &mdash; sqlite3/sqlite3_native (LoadError) on ruby on rails</a></li>
+<li><a href="https://github.com/sparklemotion/nokogiri/issues/1256" target="_blank">`require': cannot load such file -- nokogiri/nokogiri (LoadError) on ruby on rails</a></li>
+</ul>
+<h4><strong>Referensi Belajar :</strong></h4>
+<ul>
+<li><a href="http://www.belajarrubyonrails.com" target="_blank">Belajar Ruby on Rails</a></li>
+<li><a href="http://www.codecademy.com/tracks/ruby" target="_blank">Codecademy</a></li>
+<li><a href="https://railscasts.com" target="_blank">RailsCast</a></li>
+<li><a href="https://www.ruby-lang.org/" target="_blank">Ruby-lang</a></li>
+<li><a href="http://www.tutorialspoint.com/ruby/" target="_blank">Ruby Tutorial</a></li>
+</ul>
+<p>Semoga bermanfaat artikelnya.. Jika ada yng di tanyakan, saya siap membantu selama saya bisa hehe :D untuk pertemuan selanjutnya, saya akan mencoba tutorial lain tentang ruby on rails ini.. sampai jumpa xD</p>

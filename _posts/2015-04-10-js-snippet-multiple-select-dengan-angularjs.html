@@ -1,0 +1,163 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: 'JS Snippet : Multiple Select dengan AngularJS'
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 448
+wordpress_url: http://blog.dika.web.id/?p=448
+date: '2015-04-10 17:23:42 +0700'
+date_gmt: '2015-04-10 10:23:42 +0700'
+categories:
+- Slice of Code
+- Javascript
+- Angular Js
+tags: []
+comments: []
+---
+<p class="text-center">
+  <a href="http://blog.dika.web.id/wp-content/uploads/2015/04/angularjs.jpg">
+    <img class="aligncenter wp-image-449 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/04/angularjs.jpg" alt="angularjs" width="600" height="300" />
+  </a>
+</p>
+<p>Sore sore denger musik ga ada kerjaan sambil maen COC, bukannya belajar malah ngabisin waktu maen maen -_- haha padahal senin kan mau UN.. :v yasudahlah, besok harus mulai fokus nih.. dan mumpung sekarang ada waktu buka laptop, jadi ngeposting dulu nih.. Jarang jarang bikin artikel tentang Angular JS, ini baru pertama kalinya mosting nih js :3</p>
+<p><!--more--></p>
+<p>Oke kali ini saya akan memberi code snippet alias source code membuat sebuah dropdown dimana kita bisa melakukan&nbsp;<em>multiple choice</em>. tapi kalo buat milih pacar jangan multiple yaw :p oke nih broh codenya:D</p>
+
+<figure><figcaption>index.html</figcaption></figure>
+{% highlight html %}
+<html>
+
+	<head>
+		<title>Multiple Select DropDown List with AngularJS</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js" type="text/javascript"></script>
+		<script src="script.js" type="text/javascript"></script>
+	</head>
+
+	<body ng-app="App">
+		<div ng-controller="MultiSelectCtrl">
+			<div style="float:right">
+				<ul class="items-list">
+					<li ng-repeat="friend in friends | filter: getSelectedItems">
+						{{friend.name}}
+					</li>
+				</ul>
+			</div>
+
+			<div class="wrapper">
+				<div class="selected-items-box">
+					--- Pilih ---
+					<span class="dropdown-icon"></span>
+				</div>
+
+				<div class="list">
+					<ul class="items-list">
+						<li ng-repeat="friend in friends">
+						<input type="checkbox" ng-model="friend.selected" />
+						<span>{{friend.name}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+{% endhighlight %}
+<p>dan ini si javascriptnya :</p>
+
+<figure><figcaption>script.js</figcaption></figure>
+{% highlight javascript %}
+var app = angular.module('App', []).controller('MultiSelectCtrl', ['$scope',
+	function($scope) {
+
+		$('.selected-items-box').bind('click', function(e) {
+			$('.wrapper .list').slideToggle('fast');
+		});
+
+		$scope.friends = [
+			{name:'Lucky'},
+			{name:'Yoga'},
+			{name:'Fauzan'},
+			{name:'Cecep'},
+			{name:'Nurjaman'},
+			{name:'Asti'}
+		];
+
+		$scope.getSelectedItems = function(item){
+			return item.selected;
+		};
+	}
+]);
+{% endhighlight %}
+<p>kalo mau dikasih style bisa nyantumin nih code di bawah :</p>
+
+<figure><figcaption>style.js</figcaption></figure>
+{% highlight css %}
+body{
+	font-size:12px;
+	font-family:Arial;
+}
+
+.wrapper {
+	width: 200px;
+	position: relative;
+}
+
+.wrapper .selected-items-box {
+	cursor: pointer;
+	border: solid 1px #ddd;
+	padding:10px;
+	background-color: #333;
+	color: #ffffff;
+}
+
+.selected-items-box .items-list {
+	list-style-type: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.selected-items-box .items-list li {
+	display: inline;
+}
+
+.wrapper .list {
+	display: none;
+	height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-left: solid 1px #C7C6C7;
+	border-right: solid 1px #C7C6C7;
+	border-bottom: solid 1px #C7C6C7;
+	z-index: 100;
+	position: absolute;
+	width: 100%;
+}
+
+.list .items-list {
+	list-style-type: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.list .items-list li {
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	border-bottom: solid 1px #C7C6C7;
+	padding: 5px;
+	background-color: #fff;
+}
+{% endhighlight %}
+<p>nah kalo mau live previewnya bisa di coba nih di bawah :</p>
+<p><iframe width="642" height="500" src="http://embed.plnkr.co/rlLWwZvjHDJiBzZ33uCf/preview" frameborder="0"></iframe></p>
+<p>Semoga bermanfaat bro :D</p>

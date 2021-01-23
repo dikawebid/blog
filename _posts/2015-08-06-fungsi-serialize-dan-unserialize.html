@@ -1,0 +1,74 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Fungsi Serialize dan Unserialize
+author:
+  display_name: Ferdhika Yudira
+  login: ferdhika31
+  email: rpl4rt08@gmail.com
+  url: http://dika.web.id
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 601
+wordpress_url: http://blog.dika.web.id/?p=601
+date: '2015-08-06 14:33:54 +0700'
+date_gmt: '2015-08-06 07:33:54 +0700'
+categories:
+- PHP
+- Slice of Code
+tags: []
+comments: []
+---
+<p>Halo sobat, ketemu lagi nih yaa.. alhamdullilah saya hari ini ada kesempatan update blog lagi.. sebelum nanti mulai ospek kuliah, dan meluangkan waktu kerja, saya mau ngeposting sedikit catatan yng pernah saya gunakan.. Pada kesempatan kali ini saya akan memposting fungsi PHP dan yang akan saya coba bahas adalah <b>Serialize</b> dan <b>Unserialize</b>, fungsi ini adalah salah satu fungsi yang sering saya gunakan saat membuat aplikasi dengan bahasa PHP, karena fungsi ini sangat mudah penggunaannya dan besar manfaatnya brooo.. xD</p>
+<p><!--more--></p>
+<p>Jadi gini fungsi <b>serialize</b> akan mengubah bentuk suatu value menjadi bentuk lain tanpa mengubah type dan structur datanya. Dan untuk mengembalikan value ke bentuk semula dengan menggunakan fungsi <b>unserialize</b>.</p>
+<p>Nah sebelumnya pernah liat text kaya gini belum?</p>
+<blockquote><p>a:2:{s:4:"name";s:4:"Dika";s:3:"age";i:18;}</p></blockquote>
+<p>kalo belum, itulah hasil dari fungsi <strong>serialize</strong> tadi..</p>
+<p>oke sebagai contoh kita buat dengan code sederhana :</p>
+{% highlight php %}
+<?php
+	$array = array('Ferdhika','Yudira'); // this is array
+	$string = 'Ferdhika Yudira'; // and this is a string
+	$integer = 17; // integer
+	// Generate Value
+	echo serialize($array).'<br>';
+	echo serialize($string).'<br>';
+	echo serialize($integer).'<br>';
+?>
+{% endhighlight %}
+
+<p>dan resultnya kurang lebih seperti ini :</p>
+{% highlight none %}
+a:2:{i:0;s:8:"Ferdhika";i:1;s:6:"Yudira";}
+s:15:"Ferdhika Yudira";
+i:17;
+{% endhighlight %}
+<p>Nah dari contoh di atas dapat terlihat perubahan bentuk sebuah value ke bentuk lain dengan memanfaatkan fungsi <b>serialize</b>, hasil perubahan berupa text dengan beberapa kode huruf dan angka yang dipisahkan oleh tanda titik dua, setiap angka dan huruf ini memiliki arti atau sebagai indentitas dari sebuah value yang diubah.</p>
+<p>Misalnya :</p>
+<ul>
+<li>array('Ferdhika', 'Yudira') diubah menjadi <strong>a:2:{i:0;s:8:"Ferdhika";i:1;s:6:"Yudira";}</strong>, penjelasan dari huruf "a" adalah array dan angka 2 adalah jumlah index pada array, lalu setelah tanda kurung kurawal huruf "i" berarti index dengan diteruskan angka urutan dari index tersebut. Selanjutnya sama dengan penjelasan di poin 1 dan 2 dimana sesuai dengan type value.</li>
+<li>(string) "Ferdhika Yudira" diubah menjadi <b>s:15:"Ferdhika Yudira";</b>, penjelasan dari huruf "s" adalah string lalu angka 15 adalah jumlah karakter dari value string tersebut.</li>
+<li>(int) 17 diubah menjadi <b>i:17;</b>, penjelasan dari huruf "i" didepan value "17" berarti type value adalah integer.</li>
+</ul>
+<p>dan untuk mengembalikan hasil dari <strong>serialize</strong> kita bisa menggunakan fungsi <strong>unserialize</strong> tadi.. contoh :</p>
+{% highlight php %}
+$array_gen = 'a:2:{i:0;s:8:"Ferdhika";i:1;s:6:"Yudira";}';
+$string_gen = 's:15:"Ferdhika Yudira";';
+$integer_gen = 'i:17;';
+
+// Ungenerate Value
+echo unserialize($array_gen).'<br>';
+echo unserialize($string_gen).'<br>';
+echo unserialize($integer_gen).'<br>';
+{% endhighlight %}
+
+<p>Cukup mudah bukan dalam penggunaannya, tapi sekarang pertanyaan yang muncul adalah "Bagaimana dalam implementasi atau pemanfaatannya saat sedang development aplikasi?"</p>
+<p>Pemanfaatan fungsi ini paling banyak adalah untuk penyimpanan data ke dalam database terutama data dengan type array(), dengan menggunakan fungsi <b>serialize</b> data array() dapat tersimpan ke dalam database pada satu field, sehingga kita tidak perlu memisahkan data array() menjadi field yang terpisah, dan mungkin akan membuat query kita lebih sederhana.</p>
+<p>Nah sekian dulu tentang artikel <b>serialize</b> dan <b>unserialize</b>. Semoga bermanfaat ilmu nya dan bisa di implementasikan dengan program kamu.. :)) sampai jumpa :D</p>
+<p>&nbsp;</p>
+<p>Source : Sukma</p>

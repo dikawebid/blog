@@ -1,0 +1,476 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Macam Macam Operator Dalam PHP
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 426
+wordpress_url: http://blog.dika.web.id/?p=426
+date: '2015-04-03 14:29:03 +0700'
+date_gmt: '2015-04-03 07:29:03 +0700'
+categories:
+- PHP
+tags: []
+comments: []
+---
+<p>Flashback dulu yu brad, udah lama nih ga nge-posting tutorial tentang PHP :v karena banyak kesibukkan buat US,TO,UN.. oh iya, kali ini saya share ke dasar lagi ya :g oke setiap bahasa pemrograman (programming language) tidak sempurna jika tidak memiliki fitur operator, tak terkecuali dengan PHP. Fungsi operator dalam PHP adalah untuk memanipulasi data, dengan memanipulasi data ini suatu program akan bersifat dinamis. Operan adalah sebutan untuk nilai data.</p>
+<p><!--more--><br />
+Dibawah ini ada beberapa operator yang sering digunakan dalam PHP.</p>
+<ol>
+<li>
+<h3><b>Operator Perbandingan</b></h3>
+<p>Operator perbandingan adalah pemanfaatan simbol-simbol operator yang digunakan untuk perbandingan antara dua nilai. Simbol-simbol operator perbandingan yang sering digunakan dapat dilihat pada tabel berikut :</p>
+<table style="height: 319px;" border="0" width="781" cellspacing="0" cellpadding="0" bgcolor="#ffffdd">
+<tbody>
+<tr bgcolor="#3399ff">
+<td width="79">
+<div align="center"><b>Operator</b></div>
+</td>
+<td width="131">
+<div align="center"><b>Nama</b></div>
+</td>
+<td width="80">
+<div align="center"><b>Contoh</b></div>
+</td>
+<td width="248">
+<div align="center"><b>Hasil</b></div>
+</td>
+</tr>
+<tr>
+<td width="79">
+<div align="center">===</div>
+</td>
+<td width="131">Identik</td>
+<td width="80">
+<div align="center">$x === $y</div>
+</td>
+<td width="248">Benar jika $x sama dengan $y dan &nbsp;keduanya adalah tipe yang sama</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="79">
+<div align="center">></div>
+</td>
+<td width="131">Lebih besar dari</td>
+<td width="80">
+<div align="center">$x > $y</div>
+</td>
+<td width="248">Benar jika $x lebih besar dari $y</td>
+</tr>
+<tr>
+<td width="79">
+<div align="center"><</div>
+</td>
+<td width="131">Lebih kecil dari</td>
+<td width="80">
+<div align="center">$x < $y</div>
+</td>
+<td width="248">Benar jika $x lebih kecil dari $y</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="79">
+<div align="center">>=</div>
+</td>
+<td valign="top" width="131">Lebih besar dari &nbsp;atau sama dengan</td>
+<td width="80">
+<div align="center">$x >= $y</div>
+</td>
+<td valign="top" width="248">Benar jika $x lebih besar atau Benar<br />
+dengan $y</td>
+</tr>
+<tr>
+<td width="79">
+<div align="center"><=</div>
+</td>
+<td width="131">Lebih kecil dari atau &nbsp;sama dengan</td>
+<td width="80">
+<div align="center">$x <= $y</div>
+</td>
+<td valign="top" width="248">Benar&nbsp; jika $x&nbsp; lebih kecil atau sama<br />
+dengan $y</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="79">
+<div align="center">==</div>
+</td>
+<td width="131">Sama dengan</td>
+<td width="80">
+<div align="center">$x == $y</div>
+</td>
+<td width="248">Benar jika $x sama dengan $y</td>
+</tr>
+<tr>
+<td width="79">
+<div align="center">!=</div>
+</td>
+<td valign="top" width="131">Tidak sama &nbsp;dengan</td>
+<td width="80">
+<div align="center">$x != $y</div>
+</td>
+<td valign="top" width="248">Benar jika $x tidak sama dengan $y</td>
+</tr>
+</tbody>
+</table>
+<p>Sekarang cobalah buat script operator perbandingan seperti berikut :</p>
+{% highlight php %}
+<?php
+  $x="5"; // ini bilangan string
+  $y=5; // ini bilangan integer
+  echo "Percobaan === :" . ($x === $y); // hasilnya False (kosong)
+  echo "<br>Percobaan == :" . ($x == $y); // hasilnya True (1)
+?>
+{% endhighlight %}
+<p>Simpan dengan nama <b>perbandingan.php</b>, kemudian jalankan melalui localhost.</p>
+<div>Ada hal yang perlu diperhatikan dalam penggunaan operator &ldquo;=&rdquo; dan &ldquo;==&rdquo;, dalam php kedua simbol pendeklarasian tersebut berbeda jika &ldquo;=&rdquo; berarti pemberian nilai dan &ldquo;==&rdquo; berarti sama dengan, hati-hati dalam menggunakan kedua simbol tersebut.</div>
+</li>
+<li>
+<h3><b>Operator String</b></h3>
+<p>Operator ini digunakan untuk menggabungkan dua teks atau lebih dengan cara membubuhkan operator concatenation ( . ) diantara dua operan atau lebih dalam suatu operasi.<br />
+Buatlah script operator String seperti berikut :</p>
+{% highlight php %}
+<?php
+$x="Ferdhika";
+$y= $x . " Yudira";
+echo "<b>Nama Saya :</b> $y";
+?>
+{% endhighlight %}
+<p>Simpan di folder htdocs kalo pake xampp :D</li>
+<li>
+<h3><b>Operator Aritmatika</b></h3>
+<p>Operator aritmatika adalah operator yang digunakan untuk operasi matematika seperti penjumlahan, pengurangan, perkalian, pembagian dan modulus (hasil sisa). Berikut adalah tabel operator aritmatika :</p>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffcc">
+<tbody>
+<tr bgcolor="#3399ff">
+<td width="96">
+<div align="center"><b>Operator</b></div>
+</td>
+<td width="106">
+<div align="center"><b>Operasi</b></div>
+</td>
+<td width="169">
+<div align="center"><b>Penerapan</b></div>
+</td>
+</tr>
+<tr>
+<td width="96">
+<div align="center">&nbsp;+</div>
+</td>
+<td width="106">
+<div align="center">Penjumlahan</div>
+</td>
+<td width="169">
+<div align="center">$x + $y</div>
+</td>
+</tr>
+<tr>
+<td width="96">
+<div align="center">&nbsp;-</div>
+</td>
+<td width="106">
+<div align="center">Pengurangan</div>
+</td>
+<td width="169">
+<div align="center">$x - $y</div>
+</td>
+</tr>
+<tr>
+<td width="96">
+<div align="center">&nbsp;*</div>
+</td>
+<td width="106">
+<div align="center">Perkalian</div>
+</td>
+<td width="169">
+<div align="center">$x * $y</div>
+</td>
+</tr>
+<tr>
+<td width="96">
+<div align="center">&nbsp;/</div>
+</td>
+<td width="106">
+<div align="center">Pembagian</div>
+</td>
+<td width="169">
+<div align="center">$x / $y</div>
+</td>
+</tr>
+<tr>
+<td width="96">
+<div align="center">&nbsp;%</div>
+</td>
+<td width="106">
+<div align="center">Modulus</div>
+</td>
+<td width="169">
+<div align="center">$x % $y</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<p>Buatlah script operator aritmatika seperti berikut :</p>
+{% highlight php %}
+<?php
+  $x=4;
+  $y=3;
+  echo "<b>MENGGUNAKAN OPERATOR MATEMATIKA :</b>";
+  echo "<br><br>$x + $y = ".($x+$y);
+  echo "<br><br>$x - $y = ".($x-$y);
+  echo "<br><br>$x : $y = ".($x/$y);
+  echo "<br><br>$x x $y = ".($x*$y);
+  echo "<br><br>$x mod $y = ".($x%$y);
+?>
+{% endhighlight %}
+<p>Simpan dengan nama <b>aritmatika.php</b>, kemudian&nbsp; jalankan melalui localhost.</li>
+<li>
+<h3><b>Operator Increment / Decrement</b></h3>
+<p>Operator Increment dan Decrement digunakan untuk penambahan dan pengurangan otomatis dengan nilai 1 (satu). Jika operator berada sebelum variabel contohnya ++$x atau --$x, nilai $x ini akan ditambah atau dikurangi 1 (satu) sebelum dieksekusi, tetapi jika operasi diletakkan setelah variabel, contohnya $x++ atau $x--, maka nilai $x akan ditambah atau dikurangi 1 (satu) setelah dieksekusi.</p>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffcc">
+<tbody>
+<tr bgcolor="#3399ff">
+<td width="87">
+<div align="center"><b>Operator</b></div>
+</td>
+<td width="234">
+<div align="center"><b>Operasi</b></div>
+</td>
+<td width="215">
+<div align="center"><b>Penerapan</b></div>
+</td>
+</tr>
+<tr>
+<td width="87">
+<div align="center">++</div>
+</td>
+<td width="234">
+<div align="center">Pre atau Post Increment</div>
+</td>
+<td width="215">
+<div align="center">++$x atau $x++</div>
+</td>
+</tr>
+<tr>
+<td width="87">
+<div align="center">--</div>
+</td>
+<td width="234">
+<div align="center">Pre atau Post Incremenrt</div>
+</td>
+<td width="215">
+<div align="center">--$x atau $x--</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Buatlah script operator Increment/Decrement seperti berikut :</p>
+{% highlight php %}
+<?php
+  $x=100;
+  $y=10;
+  echo "Nilai \$x=$x";
+  echo "<br>Nilai \$y=$y";
+  echo "<br><br> ++\$x = ".++$x;
+  echo "<br><br> \$x++ = ".$x++;
+  $y = --$y;
+  echo "<br><br> --\$y = ".$y;
+  $y = $y--;
+  echo "<br><br> \$x-- = ".$y;
+?>
+{% endhighlight %}
+<p>Simpan dengan nama <b>increment.php</b>, kemudian&nbsp; jalankan melalui localhost.</li>
+<li>
+<h3><b>Operator Logika</b></h3>
+<p>Operator logika hampir mirip dengan operator perbandingan, keduanya sama-sama sebagai pengendali struktur program.</p>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffdd">
+<tbody>
+<tr bgcolor="#3399ff">
+<td width="80">
+<div align="center"><b>Operator</b></div>
+</td>
+<td width="80">
+<div align="center"><b>Nama</b></div>
+</td>
+<td width="78">
+<div align="center"><b>Contoh</b></div>
+</td>
+<td width="297">
+<div align="center"><b>Hasil</b></div>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="80">
+<div align="center">or</div>
+</td>
+<td rowspan="2" width="80">
+<div align="center">Or</div>
+</td>
+<td rowspan="2" width="78">
+<div align="center">$x or &nbsp;&nbsp;$y</div>
+</td>
+<td width="297">&nbsp;Menghasilkan nilai True jika salah satu dari $x</td>
+</tr>
+<tr>
+<td>&nbsp;atau $y atau keduanya bernilai True.</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="80">
+<div align="center">||</div>
+</td>
+<td width="80">
+<div align="center">Or</div>
+</td>
+<td width="78">
+<div align="center">$x | | &nbsp;$y</div>
+</td>
+<td width="297">&nbsp;Menghasilkan nilai True jika salah satu dari $x &nbsp;atau $y atau keduanya bernilai True.</td>
+</tr>
+<tr>
+<td width="80">
+<div align="center">and</div>
+</td>
+<td width="80">
+<div align="center">And</div>
+</td>
+<td width="78">
+<div align="center">$x and $y</div>
+</td>
+<td valign="top" width="297">&nbsp;Menghasilkan nilai True jika $x dan $y bernilai &nbsp;True.</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="80">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&amp;&amp;</td>
+<td width="80">
+<div align="center">And</div>
+</td>
+<td width="78">
+<div align="center">$x &amp;&amp; $y</div>
+</td>
+<td width="297">&nbsp;Menghasilkan nilai True jika $x dan $y bernilai &nbsp;True.</td>
+</tr>
+<tr>
+<td width="80">
+<div align="center">xor</div>
+</td>
+<td width="80">
+<div align="center">Ekslusif Or</div>
+</td>
+<td width="78">
+<div align="center">$x xor $y</div>
+</td>
+<td width="297">&nbsp;Menghasilkan nilai True jika salah satu dari $x &nbsp;atau $y bernilai True</td>
+</tr>
+<tr>
+<td width="80">
+<div align="center">!</div>
+</td>
+<td width="80">
+<div align="center">Not</div>
+</td>
+<td width="78">
+<div align="center">!$x</div>
+</td>
+<td width="297">&nbsp;Menghasilkan nilai True jika $x bernilai False</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<h3><b>Operator Bitwise</b></h3>
+<p>Operator bitwise dapat digunakan untuk mengoperasikan bit-bit dalam bilangan biner (0 dan 1). Jika suatu operan tidak berupa bilangan biner, maka sedapat mungkin bilangan tersebut dikenversi terlebih dahulu hingga didapat bilangan biner.</p>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#ffffdd">
+<tbody>
+<tr bgcolor="#3399ff">
+<td width="73">
+<div align="center"><b>Operator</b></div>
+</td>
+<td width="88">
+<div align="center"><b>Nama</b></div>
+</td>
+<td width="85">
+<div align="center"><b>Contoh</b></div>
+</td>
+<td width="291">
+<div align="center"><b>Hasil</b></div>
+</td>
+</tr>
+<tr>
+<td width="73">
+<div align="center">|</div>
+</td>
+<td width="88">
+<div align="center">Or</div>
+</td>
+<td width="85">
+<div align="center">$x&nbsp;|&nbsp;$y</div>
+</td>
+<td width="291">&nbsp;Bit diset 1 jika salah satu dari $x atau $y &nbsp;bernilai 1</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td valign="top" width="73" height="22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&amp;</td>
+<td width="88">
+<div align="center">And</div>
+</td>
+<td width="85">
+<div align="center">$x &amp; $y</div>
+</td>
+<td valign="top" width="291">&nbsp;Bit diset 1 jika salah $x dan $y bernilai 1</td>
+</tr>
+<tr>
+<td width="73">
+<div align="center"><<</div>
+</td>
+<td width="88">
+<div align="center">Shift Left</div>
+</td>
+<td width="85">
+<div align="center">$x << $y</div>
+</td>
+<td valign="top" width="291">&nbsp;Geser bit $x sebanyak $y langkah ke kiri</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="73">
+<div align="center">>></div>
+</td>
+<td width="88">
+<div align="center">Shift Right</div>
+</td>
+<td width="85">
+<div align="center">$x >> $y</div>
+</td>
+<td valign="top" width="291">&nbsp;Geser bit $x sebanyak $y langkah ke kanan<b> </b></td>
+</tr>
+<tr>
+<td width="73">
+<div align="center">^</div>
+</td>
+<td width="88">
+<div align="center">Ekslusif Or</div>
+</td>
+<td width="85">
+<div align="center">$x ^ $y</div>
+</td>
+<td width="291">&nbsp;Bit diset 1 jika salah satu dari $x atau $y &nbsp;bernilai 1</td>
+</tr>
+<tr bgcolor="#ccffcc">
+<td width="73">
+<div align="center">-</div>
+</td>
+<td width="88">
+<div align="center">Not</div>
+</td>
+<td width="85">
+<div align="center">- $x</div>
+</td>
+<td width="291">&nbsp;Bit diset 1 jika $x bernilai 0 dan bernilai 0 jika &nbsp;$x bernilai &nbsp;1</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>Semoga bermanfaat :) Sampai jumpa di esok hari.. :D</p>
+<p>&nbsp;</p>
+<p>Source : 2bprogrammer</p>

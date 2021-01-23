@@ -1,0 +1,65 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Membuat Koneksi Database MySQL ke VB.net 2008
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 278
+wordpress_url: http://blog.dika.web.id/?p=278
+date: '2015-02-05 20:03:18 +0700'
+date_gmt: '2015-02-05 13:03:18 +0700'
+categories:
+- Tutorial
+- VB.net
+tags:
+- Database
+comments: []
+---
+<p>Malem malem ngepost lagi ah, mumpung lagi ngerjain ujikom pake vb.. haha soalnya kangen, udah lama banget ga main syntax vb lagi pas semenjak pkl.. nah kali ini, mumpung lagi buka vb, saya mau buat tutor sederhana dulu.. :D gampang kok.. :) cobain ya.. :3 oke, mari kita mulai.. :D</p>
+<p><!--more--></p>
+<p>Siapkan dulu komposisi buat programnya vroh :3</p>
+<ul>
+<li>VB.net 2008 (Cari di google aja gan :3)</li>
+<li>XAMPP atau MYSQLnya (<a href="http://adf.ly/vtVGk" target="_blank">Download</a>)</li>
+<li>MYSQL Connector (<a href="http://adf.ly/yvLO1" target="_blank">Download</a>)</li>
+</ul>
+<p>Install dulu semuanya, biar apdol :3 nah kalo udah, ayo kita bener bener mulai :v kalo udah jangan lupa buat databasenya dengan nama <strong>db_dika </strong>di phpmyadmin (kalo pake xampp)</p>
+<p>Pertama : Buka vb.net nya dulu, disini saya pake vb.net 2008 (kalo ga ada download dulu yaw) :D jadul? biarin :P</p>
+<p>Kedua : Buat Project Baru <strong>File-> New -> Project</strong>, kasih nama apa aja sesuka hati.. :3</p>
+<p>Ketiga : Pilih Menu <strong>Project -> Add Referance, </strong>lalu cari MySQL Data.. Runtimenya yang v2 aja paling atas<a href="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-228.png"><img class="aligncenter size-full wp-image-279" src="http://blog.dika.web.id/wp-content/uploads/2015/02/RPL4rt-Studio-capture-228.png" alt="RPL4rt Studio capture #228" width="482" height="411" /></a>Nah Selanjutnya kita ngoding, ketik syntax seperti dibawah :</p>
+
+{% highlight vb.net %}
+Imports MySql.Data.MySqlClient
+
+Public Class Form1
+    Dim db As MySqlConnection
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Try
+            db = New MySqlConnection("server=localhost;user id=root;database=db_dika")
+            db.Open()
+            MsgBox("Tersambung")
+        Catch ex As Exception
+            MsgBox("Belum tersambung")
+            End
+        End Try
+    End Sub
+End Class
+{% endhighlight %}
+
+<p>nah jangan lupa, copasnya yang rapih yaw.. sesuaikan si class name sama punya masing masing :3</p>
+<p>Penjelasan :</p>
+<ul>
+<li><em>Import Mysql.Data.MySqlClient </em>Fungsinya buat ngemasukin library mysql ke project kita</li>
+<li><em>Dim db As MySqlConnection</em> Fungsinya untuk mendeklarasikan variable db menjadi mysqlconnection</li>
+<li><em>Try Catch </em>Fungsinya agar coding kita di test terlebih dahulu, jika terjadi error maka akan di catch (Tangkap)</li>
+<li><em>db = New MySqlConnection("server=localhost;user id=root;database=db_dika")</em> Fungsinya untuk membuat koneksi mysql contohnya user default xampp adalah root dan nama database saya db_dika</li>
+<li><em>db.open()</em> Fungsinya untuk membuka koneksi kita, jika terjadi error maka akan muncul kuning gitu jika tidak di try catch</li>
+</ul>
+<p>Nah, udah selesai.. udah bisa belom? kalo ada error bisa di isi komennya gan :D</p>
+<p>Kalo yang mau nyicip contoh projectnya bisa di download di bawah :D</p>
+<p style="text-align: center;"><a href="http://adf.ly/yvtPD" target="_blank">Download</a></p>

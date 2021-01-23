@@ -1,0 +1,118 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Installasi Ionic pada Windows 7
+author: dika
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 524
+wordpress_url: http://blog.dika.web.id/?p=524
+date: '2015-06-18 12:30:59 +0700'
+date_gmt: '2015-06-18 05:30:59 +0700'
+categories:
+- Tutorial
+- Mobile Development
+- Javascript
+- Ionic Framework
+tags: []
+comments:
+- id: 149
+  author: Bayu Bismaka
+  author_email: bismakabayu@gmail.com
+  author_url: ''
+  date: '2015-09-29 18:23:14 +0700'
+  date_gmt: '2015-09-29 11:23:14 +0700'
+  content: Ini tutorial yang ditunggu2 :p wkwkwk
+- id: 236
+  author: Maulvy
+  author_email: hells.bells@rocketmail.com
+  author_url: ''
+  date: '2015-12-10 04:12:30 +0700'
+  date_gmt: '2015-12-09 21:12:30 +0700'
+  content: Tutorialnya sangat membantu Mas, terima kasih banyak. Keep Posting :-)
+- id: 425
+  author: Kingsman
+  author_email: dropot@yahoo.com
+  author_url: ''
+  date: '2016-02-28 17:49:11 +0700'
+  date_gmt: '2016-02-28 10:49:11 +0700'
+  content: "sangat membantu mas postingannya..\r\nmau nanya nih mas , ada gak fitur
+    drag, drop di ionic ?"
+- id: 428
+  author: Ferdhika Yudira
+  author_email: rpl4rt08@gmail.com
+  author_url: http://dika.web.id
+  date: '2016-03-04 18:04:35 +0700'
+  date_gmt: '2016-03-04 11:04:35 +0700'
+  content: "untuk fitur drag n drop bawaan ionic mungkin belum ada.. tapi kalo bawaan
+    yng serupa seperti itu, bisa pake cara alternative sort order list bawaan ionic..
+    bisa di lihat di dokumentasi nya langsung di mari => <a href=\"http://ionicframework.com/docs/api/directive/ionList/\"
+    target=\"_blank\" rel=\"nofollow\">ionList</a> \r\nnah kalo masih mau pake drag
+    n drop, bisa pake library luar.. bisa di coba dulu pake repositori ini <a href=\"https://github.com/marceljuenemann/angular-drag-and-drop-lists\"
+    target=\"_blank\" rel=\"nofollow\">angular-drag-and-drop-lists</a> atau <a href=\"https://github.com/codef0rmer/angular-dragdrop\"
+    target=\"_blank\" rel=\"nofollow\">angular-dragdrop</a>\r\n\r\nTerima kasih sudah
+    berkunjung ^^"
+---
+<p>Helo bro, udah lama nih saya ga posting posting lagi di nih blog.. ada yng kangen ga nih? kaga ada? yo wess skip >><br />
+Mari langsung ke intinya saja yaaw :3 btw ini bakalan jadi mainan baru buat saya :v</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/06/ionic_dik.png"><img class="aligncenter size-full wp-image-534" src="http://blog.dika.web.id/wp-content/uploads/2015/06/ionic_dik.png" alt="ionic_dik" width="200" height="200" /></a><!--more--></p>
+<p>Ionic adalah sebuah framework yang digunakan untuk membuat aplikasi mobile dengan menggunakan teknologi web, seperti html5, css, javascript dll. dan dapat digunakan untuk mengembangkan aplikasi mobile hybrid.</p>
+<p>Oh iya btw apa itu mobile hybrid? Anda hanya perlu 1x membuat aplikasi dan itu bisa digunakan di platform smartphone, seperti Android, iOS. Dibanding dengan framework jQuery, Ionic jauh lebih cepat.</p>
+<p>Pastikan untuk men-download dan menginstall <a href="http://download.dika.web.id/index.php/donlod/detail/12" target="_blank">Git for Windows</a> pada kompi/lepi anda dan opsional Console..</p>
+<h2>1.Install Node Js</h2>
+<table border="1" width="100%">
+<tbody>
+<tr>
+<th>Windows Installer (.msi)</th>
+<td><a href="http://nodejs.org/dist/v0.12.0/node-v0.12.0-x86.msi">32-bit</a></td>
+<td><a href="http://nodejs.org/dist/v0.12.0/x64/node-v0.12.0-x64.msi">64-bit</a></td>
+</tr>
+</tbody>
+</table>
+<p>Setelah download selesai jalan kan setup secara default path install akan terinstall di&nbsp; <em>C:\Program Files\nodejs</em></p>
+<p>tekan&nbsp; tombol flagwindows+r (run) lalu ketik cmd maka akan masuk ke <em>console</em> dos lalu ketik</p>
+<p>&ldquo;node -v&rdquo; tanpa kutip 2..</p>
+<blockquote><p>C:\Users\Localhost>node -v</p>
+<p>v.0.12.4</p></blockquote>
+<p>Jika Keluar error seperti ini :</p>
+<blockquote>
+<p>C:\Users\Localhost>node -v<br />
+&lsquo;node&rsquo; is not recognized as an internal or external command,<br />
+operable program or batch file.</p>
+</blockquote>
+<p>berarti&nbsp;anda belum mensetting path nya..</p>
+<p>Select <em>Start -> Computer -> System Properties -> Advanced system settings -> Environment Variables -> System variables -> PATH</em>.</p>
+<p><span id="result_box" class="" lang="id"><span class="hps">tambahkan ke awal variabel PATH</span></span></p>
+<blockquote><p><span id="result_box" class="" lang="id"><em>C:\Program Files\nodejs</em> ;&nbsp;</span></p></blockquote>
+<p><strong>NPM</strong></p>
+<p>NPM&nbsp; (Node Package Manager. ) . NPM ini sudah diikutsertakan secara <em>default</em> waktu instalasi NodeJS. <em>Tool</em> ini benar-benar akan sangat membantu Anda untuk menambahkan beberapa <em>module</em> NodeJS akan terinstall secara default di <em>C:\Program Files\nodejs\node_modules\npm\bin</em></p>
+<p>ketik di cmd <strong>npm-v</strong></p>
+<blockquote><p>C:\Users\Localhost>npm -v</p>
+<p>2.10.1</p></blockquote>
+<p>Jika sama terdapat error sama seperti sebelumnya is not recognized as an internal or external command, berarti kita harus menambahkan variable pathnya</p>
+<blockquote><p><span id="result_box" class="" lang="id"><em>C:\Program Files\nodejs\node_modules\npm\bin</em>;</span></p></blockquote>
+<p>Sekedar Catatan Bro : Setiap kali Anda membuat perubahan pada PATH, atau variabel environtment lainnya, Anda harus me-restart atau membuka tab baru dalam program shell untuk perubahan PATH berlaku. (<strong>tutup cmd lalu buka lagi</strong>)</p>
+<h2>3. Install ionic</h2>
+<blockquote><p>npm install -g ionic</p></blockquote>
+<h2>4. Membuat Awal aplikasi IONIC</h2>
+<blockquote><p>ionic start myapp tabs</p></blockquote>
+<p>myapp adalah nama aplikasi yang akan dibuat</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-5.png"><img class="aligncenter wp-image-530 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-5.png" alt="RPL4rt Studio capture #5" width="842" height="294" /></a><br />
+tabs adalah template dari ionic, ada tiga pilihan yaitu blank, tabs, dan sidemenu</p>
+<p>Di langkah ini kita sudah bisa langsung menjalankannya melalui web browser. ketikkan</p>
+<blockquote><p>cd myapp</p></blockquote>
+<p>Running&nbsp; Aplikasi di browser</p>
+<blockquote><p>ionic serve</p></blockquote>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-6.png"><img class="aligncenter wp-image-532 size-full" src="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-6.png" alt="RPL4rt Studio capture #6" width="677" height="348" /></a></p>
+<p>Setelah itu akan membuka tab baru di browser anda :</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-7.png"><img class="aligncenter size-medium wp-image-533" src="http://blog.dika.web.id/wp-content/uploads/2015/06/RPL4rt-Studio-capture-7-174x300.png" alt="RPL4rt Studio capture #7" width="174" height="300" /></a><br/>Untuk debugging code tekan F12</p>
+<p>tutorial debugging dan menggunakan console di chrome klik di <a href="https://developer.chrome.com/devtools/docs/console">sini</a><br />
+tutorial debugging dan menggunakan console di mozila firefox klik di <a href="https://developer.mozilla.org/en/docs/Tools/Web_Console">sini</a><br />
+tutorial debugging dan menggunakan console di internet explorer klik di <a href="https://msdn.microsoft.com/en-us/library/ie/gg589530%28v=vs.85%29.aspx">sini</a></p>
+<p>Nah sekian untuk tutorial kali ini, untuk build aplikasi ini ke platform.. nanti saya akan posting di artikel berikutnya.. Sampai jumpa :D</p>
+<p>&nbsp;</p>
+<p>Source : Read on IT</p>

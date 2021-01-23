@@ -5,8 +5,8 @@ date: 2014-09-02 11:52:31
 disqus: y
 share: y
 publish: y
-categories: ["Tutorial"]
-tags: ["PHP","Code Igniter"]
+categories: ["Tutorial", "PHP", "Code Igniter"]
+tags: []
 lang: id
 author: dika
 ---

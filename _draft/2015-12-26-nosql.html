@@ -1,0 +1,67 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: NoSQL
+author:
+  display_name: Ferdhika Yudira
+  login: ferdhika31
+  email: rpl4rt08@gmail.com
+  url: http://dika.web.id
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 645
+wordpress_url: http://blog.dika.web.id/?p=645
+date: '2015-12-26 15:24:32 +0700'
+date_gmt: '2015-12-26 08:24:32 +0700'
+categories:
+- Database
+tags:
+- Konsep NoSQL
+- NoSQL
+- NoSQL itu apa?
+comments: []
+---
+<p>Udah hari ke tiga liburan nih, masih aja belum kemana mana :v maklum lah diluar macet total dari pas sebelum natal -_- yo, mari hari ini saya akan berbagi sekalian belajar tentang NoSQL, nah apa sih NoSQL ini? Database NoSQL adalah database yang tidak menggunakan realasi antar tabel dan tidak menyimpan data dalam format tabel kaku (kolom yang fix) seperti layaknya Relasional Database.</p>
+<p>NoSQL merupakan kombinasi dua kata, kata No dan SQL. NoSQL adalah teknologi yang menandingi SQL. Pembuat dan pengadopsi awal dari kata NoSQL menginginkan untuk berkata No RDBMS atau No Relational tetapi akhirnya disuarakan dengan kata NoSQL. NoSQL digunakan sebagai payung pengertian untuk semua basis data dan penyimpanan data yang tidak mengikuti dasar-dasar RDBMS. NoSQL mewakili kelas dari produk dan kumpulan yang berbeda konsep tentang penyimpanan data dan manipulasi.<!--more--></p>
+<p>Sejarah konsep NoSQL dimulai ketika Carlo Strozzi pada tahun 1998 menggunakannya untuk nama <em>open source database relational</em> yang tidak mengikuti standar SQL, kemudian Eric Evans (karyawan Rackspace) memperkenalkan kembali istilah NoSQL pada awal 2009 ketika Johan Oskarsson dari Last.fm ingin menyelenggarakan acara untuk membahas <em>distributed database open source</em>.</p>
+<p>Sejarah NoSQL tidak lepas dari kesulitan-kesulitan yang terjadi dalam penanganan perkembangan database dengan menggunakan konsep relational database. Dalam praktiknya, database tidak hanya berkembang secara vertikal (adanya penambahan baris), tetapi juga berkembang secara horisontal (adanya penambahan <em>field</em>). Ketika <em>field </em>bertambah banyak permasalahan yang terjadi ketika menggunakan konsep RDBMS. Dalam konsep RDBMS, penambahan <em>field</em> merupakan masalah yang harus dihindari, akan tetapi pada kenyataannya hal itu sering terjadi. Konsep tersebut yang mendasari adanya konsep NoSQL. NoSQL tidak membutuhkan skema tabel dan umumnya menghindari operasi join karena berkembang secara horisontal. Kaum akademisi menyebutnya sebagai <em>structured storage</em> (penyimpanan terstruktur).</p>
+<p>Eric Brewer menyatakan bahwa NoSQL didasarkan pada teori CAP yaitu pemilihan dua dari tiga aspek yang ada yang harus dipenuhi oleh basis data yaitu <em>Consistency, Avaibility, dan Partition Tolerance</em>.<em> Consistency Avaibility</em> (CA) berseberangan dengan <em>Partition Tolerance</em> dan biasanya berhubungan dengan replikasi. <em>Consistency Partition Tolerance</em> (CP) berseberangan dengan <em>Avaibility</em> dalam penyimpanan data. <em>Avaibility Partition Tolerance</em> sistem mencapai kondisi<em> eventual consistency</em> melalui replikasi dan verifikasi yang konsisten dalam node yang telah terbagi-bagi. Dalam basis data NoSQL penerapan konsep tersebut diterjemahkan dalam empat konsep dasar yaitu <em>Non Relational, Map Reduce, Schema Free, dan Horizontal Scaling</em>.</p>
+<ol>
+<li><strong>Non Relational</strong><br />
+Konsep Non Relational dalam basis data NoSQL meliputi hirarki, graf, dan basis data berorientasi obyek yang sudah terlebih dahulu ada sejak tahun 1960 sebelum akhirnya basis data relational muncul pada tahun 1960. Penggunaan basis data non relational kembali merebak seiring dengan bertambahnya aplikasi berbasis web yang memerlukan banyak penyimpanan data. Meskipun memiliki kelemahan pada konsistensi dan redundansi data, namun basis data non relational dapat menyelesaikan beberapa permasalahan terkait dengan avaibility dan partition tolerance. Tugas pengecekan konsistensi dan redundansi data diserahkan pada sisi aplikasi, sedangkan basis data non relational hanya bertugas memanipulasi penyimpanan saja.</li>
+<li><strong>Map Reduce</strong><br />
+Map reduce merupakan model pemrograman yang diadaptasi dari pemrograman fungsional yang diimplementasikan untuk mengolah dataset yang sangat besar. Tujuan dai Map Reduce adalah merancang suatu abstraksi baru yang memungkinkan pengguna untuk membuat antar muka pemrograman sederhana dan menyembunyikan detail yang rumit dari paralelisasi, fault-tolerance, distribusi data, dan load balancing dalam pustaka pemrogramannya. Hasilnya menunjukkan bahwa penerapan Map Reduce dapat menyederhanakan antar muka pemrograman yang dapat mendukung paralelisasi dan distribusi komputasi skala besar secara otomatis.<br />
+Pemrograman dengan Map Reduce telah sukses diterapkan penggunaannya ole Google untuk berbagai tujuan, salah satunya adalah Google Indexing. Dalam kinerjanya, Google menerapkan ribuan mesin yang bekerja pada ratusan tera bytes data dengan lokasi server yang tersebar di beberapa lokasi. Jenis arsitektur seperti ini dapat mengurangi waktu kinerja yang diperlukan. Pembangunan arsitektur Google dengan menggunakan Map Reduce memerlukan waktu hanya dalam beberapa jam saja dibandingkan dengan tidak menerapkan Map Reduce yang memerlukan waktu selama berbulan-bulan. Penggunaan library dalam Map Reduce memiliki beberapa keuntungan seperti load balancing, optimasi perangkat penyimpanan yang nantinya akan meningkatkan keefisiensian sistem dan memudahkan dalam penggunaannya. Mudahnya Map Reduce bekerja dengan membagi proses menjadi dua fase, yaitu tahap map dan tahap reduce. Seorang programmer dapat memanfaatkan dua fungsi ini bersama fungsi key-value pairs sebagai input dan output untuk mencapai semua fase.</li>
+<li><strong>Schema Free</strong><br />
+NoSQL dan RDBMS memiliki perbedaan dalam hal penerapan skema basis data. Dalam basis data relasional, sebuah tabel didesain dengan peraturan skema yang ketat. NoSQL menyimpan data dengan aturan yang lebih longgar, artinya tidak seperti basis data yang berdasarkan SQL tradisional. NoSQL tidak memiliki tabel, kolom, primary key, foreign key, join, relasi (Joe Lennon, 2009).<br />
+Dalam pengembangan basis data relasional, developer/ database administrator harus berhati-hati dalam menentukan bagaimana tabel saling berelasi dan field yang ada dalam setiap tabel, karena perubahan skema dalam RDBMS dapat menimbulkan masalah ketergantungan dan integritas, seperti timbulnya kolom null dan relasi kunci yang tidak cocok. Hal tersebut bukan masalah dalam NoSQL karena adanya penerapan schema-free. Setiap dokumen bertanggung jawab terhadap isinya sendiri. Jadi null value dapat dihilangkan dalam beberapa baris, dan field baru dapat didefinisikan dalam setiap dokumen secara independen.<br />
+Manfaat lain dalam penggunaan schema-free adalah penghematan dalam media penyimpanan. Dalam basis data relasional, setiap field yang ada dalam tabel harus mempunyai nilai, walaupun nilai itu null. Model data schema free artinya setiap baris memungkinkan memiliki nilai sebanyak yang telah didefinisikan dalam tiap field, dan tidak perlu menggunakan nilai yang memang tidak diperlukan. (Eben Hewitt, 2010).<br />
+Kelemahan dalam penggunaan schema-free adalah memunculkan lemahnya pendefinisian struktur yang memungkinkan terjadinya penggunaan basis data yang tidak konsisten. Jika tujuan pembangunan basis data didasarkan pada konsistensi yang ketat, seperti wiki, document management systems, discussion forums, blogs, dan support management systems, maka basis data relasional masih merupakan pilihan yang tepat.</li>
+<li><strong>Horizontal Scaling</strong><br />
+Horizontal scaling memungkinkan basis data dijalankan pada beberapa server untuk meningkatkan kemampuan perangkat penyimpanan dan meningkatkan efisiensi waktu. Hal ini memerlukan kemampuan dinamis pemartisian data dalam serangkaian node (storage host) dalam suatu cluster server. Kemampuan dengan menambahkan beberapa komputer sangatlah penting dilakukan untuk data yang jumlahnya banyak, karena vertical scaling dilakukan dengan meningkatkan kemampuan spesifikasi single server terbatas dan lebih mahal.</li>
+</ol>
+<h5><strong>Pengelompokan database NoSQL</strong></h5>
+<p>Secara umum, database NoSQL dibagi menurut format penyimpanan dokumennya . Berikut ini adalah pengelompokan database NoSQL berdasarkan model (penyimpanan) datanya</p>
+<ol>
+<li>Document Database contohnya MongoDB, seiap satu object data disimpan dalam satu dokumen. Dokumen sendiri bisa terdiri dari key-value, dan value sendiri bisa berupa array atau key-value bertingkat.</li>
+<li>Graph , Format penyimpanan data dalam struktur graph. Format ini sering dipakai untuk data yang saling berhubungan seperti jejaring social. Contoh database noSQL dengan format ini adalah Neo4J dan FlockDB. FlockDB dipakai oleh twitter.</li>
+<li>Key &ndash; Value,&nbsp; contoh database jenis ini adalah Apache Cassandra.</li>
+<li>Object Database. Format database yang disimpan dalam object object, Object disini sama dengan pengertian object di Pemrograman beroreintasi object , Contoh databasenya adalah Db4o.</li>
+<li>Tipe lainnya adalah tabular, tuple store dan berbagai jenis lain yang tidak terlalu populer.</li>
+</ol>
+<p>Kelebihan NoSQL di banding Relasional Database</p>
+<ul>
+<li>NoSQL bisa menampung data yang terstruktur, semi terstruktur dan tidak terstuktur secara efesien dalam skala besar (big data/cloud).</li>
+<li>Menggunakan OOP dalam pengaksesan atau manipulasi datanya.</li>
+<li>NoSQL tidak mengenal schema tabel yang kaku dengan format data yang kaku. NoSQL sangat cocok untuk data yang tidak terstruktur, istilah singkat untuk fitur ini adalah Dynamic Schema.</li>
+<li>Autosharding, istilah sederhananya, jika database noSQL di jalankandi cluster server (multiple server) maka data akan tersebar secara otomatis dan merata keseluruh server.</li>
+</ul>
+<p>Kekurangan dari database NoSQL sendiri , menurut saya adalah Hosting yang cukup mahal. Beberapa layanan di luar negeri mencharge biaya 100-200USD untuk hosting database NoSQL. Selain itu, saya belum pernah menemukan hosting Cpanel yang mendukung database MongoDB atau database NoSQL lainnya.</p>
+<p>Selain itu, karena bervariasinya produk dan format penyimpanan, berpindah antar satu produk database ke produk NoSQL lainnya perlu waktu untuk belajar. Contohnya ketika anda pindah dari MongoDB ke Cassandra, maka anda harus belajar lagi dari awal, berbeda dengan database RDMS.</p>
+<p>Nah sekian artikel tentang NoSQL ini. Semoga bermanfaat.. :D</p>
+<p>&nbsp;</p>
+<p>Sumber : Insanjabal &amp; Candra</p>

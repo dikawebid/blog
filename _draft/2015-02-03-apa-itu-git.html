@@ -1,0 +1,132 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: Apa Itu Git?
+author:
+  display_name: Ferdhika Yudira
+  login: ferdhika31
+  email: rpl4rt08@gmail.com
+  url: http://dika.web.id
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 267
+wordpress_url: http://blog.dika.web.id/?p=267
+date: '2015-02-03 20:07:46 +0700'
+date_gmt: '2015-02-03 13:07:46 +0700'
+categories:
+- Tutorial
+tags:
+- Belajar Git
+- Github
+- Clone Git
+- Cara Upload Project Ke Github
+comments: []
+---
+<p>Hahahay lagi semangat nih buat ngeposting hari ini.. :D barusan udah ngepost Addons Mozila, sekarang saya mau ngeshare tentang git.. Ada yang tau apa itu git? ya saya juga kurang tau hehe :s karna saya belajar git waktu di tempat pkl an.. karna bosan dengan koding, saya nyoba sesuatu yang baru :v haha.. oke lanjut lagi ke masalah git..</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/git-logo.png"><img class="alignleft size-full wp-image-273" src="http://blog.dika.web.id/wp-content/uploads/2015/02/git-logo.png" alt="git-logo" width="400" height="167" /></a><!--more-->Apa sih git itu? git adalah sebuah system versioning control (sistem kontrol versi) terdistribusi, ada istilah lain dari git ini adalah source code management software (aplikasi manajemen kode sumber), atau menurut wikipedia git adalah perangkat lunak pengontrol versi atau proyek manajemen kode perangkat lunak yang diciptakan oleh Linus Torvalds, yang pada awalnya ditujukan untuk pengembangan kernel Linux.</p>
+<pre class="theme:github toolbar:2 toolbar-overlay:false toolbar-hide:false toolbar-delay:false show-title:false striped:false marking:false ranges:false nums:false nums-toggle:false wrap-toggle:false lang:default decode:true">03-02-2015 Memulai Project Website Kejaksaan, File HTML &amp; CSS Dasar
+
+04-02-2015 Penambahan Menu Utama
+
+05-02-2015 Penambahan Layout Standar
+
+06-02-2015 Penambahan CRUD System</pre>
+<p>Pada contoh diatas kita menggunakan tanggal sebagai tanda akan apa yang telah kita lakukan, dengan demikian kita bisa tahu kapan perubahan terjadi dan apa perubahan yang dilakukan. Dan dalam Git semua itu bisa dilakukan dengan mudah dan asyiknya jika Anda merusak kode sehingga membuat aplikasi error, maka anda dapat mengembalikan kode tersebut berdasarkan pada tanda/tanggal dimana kode masih normal, lebih mirip seperti restore point.</p>
+<p>Git juga tidak hanya digunakan untuk perorangan, beberapa orang pun dapat bekerja secara bersamaan mengerjakan kode Anda dan Anda masih memiliki kontrol penuh terhadap kode Anda, Anda bisa menambahkan kode yang ditambahan oleh orang lain atau mengabaikannya sama sekali. oleh karena itu Git sering digunakan sebagai pengatur dalam projek kolaborasi dimana tidak hanya satu orang yang mengerjakan sebuah kode tapi beberapa orang sekaligus yang mengerjakan kode tersebut.</p>
+<h3><strong>Instalasi</strong></h3>
+<p>Git dapat berjalan dikomputer anda dengan menginstallnya terlebih dahulu. Anda dapat mendownload installer Git di situs <a href="http://git-scm.com/" target="_blank">http://git-scm.com/</a></p>
+<p>Saya tidak akan menjelaskan cara menginstallnya karena proses instalasi ini tidak berbeda jauh dengan proses instalasi aplikasi lainnya. (tinggal next aja :p)</p>
+<h3><strong>Penggunaan</strong></h3>
+<p>Aplikasi git dapat diakses melalui terminal/Command Prompt jadi silahkan buka Terminal/Command Prompt dan ketik <code>git --version</code> untuk melihat versi dari git yang terinstall dan untuk mengkonfirmasi jika proses instalasi berjalan mulus.<a href="http://blog.dika.web.id/wp-content/uploads/2015/02/git-version@dika.web_.id_.png"><img class="aligncenter size-full wp-image-268" src="http://blog.dika.web.id/wp-content/uploads/2015/02/git-version@dika.web_.id_.png" alt="git--version@dika.web.id" width="674" height="340" /></a></p>
+<p>Untuk mempelajari git ada baiknya kita buat sebuah studi kasus, pertama-tama kita buat folder baru untuk projek kita dan kita beri nama latihan-git. Anda bisa melakukannya melalui aplikasi Windows Explorer/File Manager/Finder namun kali ini untuk mengasah kemampuan Terminal/Command Promp Anda silahkan ketikkan perintah berikut:</p>
+{% highlight bash %}
+mkdir latihan-git
+{% endhighlight %}
+<p>setelah folder latihan-git dibuat, kita navigasikan terminal ke dalam folder tersebut dengan mengetikkan peritah:</p>
+{% highlight bash %}
+cd latihan-git
+{% endhighlight %}
+<h4 id="git-init"><strong>Git Init</strong></h4>
+<p>Agar projek kita dapat diatur oleh git, maka kita perlu melakukan inisiasi git terlebih dahulu, caranya dengan mengetikkan perintah :</p>
+{% highlight bash %}
+git init
+{% endhighlight %}
+<p>Perintah tersebut akan membuat folder .git dan didalamnya berisi file-file yang akan digunakan oleh Git untuk mengatur dan mengontrol project kita.</p>
+<h4 id="git-status"><strong>Git Status</strong></h4>
+<p>Untuk mengetahui status dari git, ketikkan perintah :</p>
+{% highlight bash %}
+git status
+{% endhighlight %}
+<p>Anda akan mendapatkan keterangan seperti berikut:</p>
+<blockquote><p># On branch master<br />
+# Initial commit<br />
+# nothing to commit (create/copy files and use "git add" to track)</p></blockquote>
+<p>Dari sana kita bisa mengetahui bahwa kita berada dalam branch master, dan kita telah melakukan initial commit, mengenai branch dan commit semuanya akan saya bahas nanti.</p>
+<p>Sekarang mari kita buat file baru, misalkan buat file index.html lalu tambahkan kode berikut ke dalamnya</p>
+{% highlight html %}
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Belajar Git</title>
+	</head>
+
+	<body>
+		<p>Hello Git</p>
+	</body>
+</html>
+{% endhighlight %}
+
+<h4><strong>Git Add</strong></h4>
+<p>Jika anda mengetikkan kembali perintah git status maka yang anda dapatkan kurang lebih seperti berikut :</p>
+<blockquote>On branch master<br />
+Initial commit<br />
+Untracked files:<br />
+(use "git add ..." to include in what will be committed)<br />
+index.html<br />
+nothing added to commit but untracked files present (use "git add" to track)</blockquote>
+<p>Dari informasi diatas kita mendapatkan informasi bahwa Anda file baru yang belum terlacak. Kita perlu menambahkan file tersebut ke dalam git agar dapat dilacak perubahan-perubahan yang terjadi. Untuk itu anda dapat mengetikkan perintah:</p>
+{% highlight bash %}
+git add index.html
+{% endhighlight %}
+<p>Dengan demikian anda telah menambahkan file index.html kedalam git agar bisa dimonitor/diawasi nantinya. Dan jika anda kembali mengetikkan git status yang akan anda dapatkan adalah:</p>
+<blockquote>Changes to be committed:<br />
+(use "git rm --cached ..." to unstage)
+<p>new file:&nbsp;&nbsp; index.html</p></blockquote>
+<h4 id="git-gommit"><strong>Git Commit</strong></h4>
+<p>Anda telah menambahkan file baru, namun anda belum melakukan commit. Oke, kembali ke contoh kasus dalam pembuka artikel ini, commit merupakan istilah untuk menandai terhadap perubahan yang telah anda lakukan, dalam contoh sebelumnya kita menandainya dengan tanggal dan keterangan singkat. Nah untuk menandai setiap perubahan yang telah anda lakukan dan anda ingin agar git mengingatnya Anda harus melakukan commit terlebih dahulu. Untuk melakukan commit ketikkan perintah berikut:</p>
+{% highlight bash %}
+git commit -m "Added index.html"
+{% endhighlight %}
+<p>Dalam perintah diatas harus disertakan juga pesan commit, tanda -m digunakan untuk menambahkan pesan commit dan teks selanjutnya adalah pesan commit kita yakni &ldquo;Added index.html&rdquo;.</p>
+<h4 id="branch"><strong>Git Branch</strong></h4>
+<p>Misalkan anda ingin menambahkan suatu fitur, namun anda tidak mau kode yang ada sekarang rusak karena fitur yang akan anda tambahkan masih belum stabil, Dalam Git anda dapat membuat branch terlebih dahulu. Branch ini bisa diartikan sebagai cabang dari branch master. segala perubahan yang anda lakukan pada branch yang anda buat tidak akan berpengaruh pada branch lainnya.</p>
+<p>Sebagai contoh, kita buat branch dengan nama branch &ldquo;fix-css&rdquo; dengan mengetikkan perintah:</p>
+{% highlight bash %}
+git branch fix-css
+{% endhighlight %}
+<p>Jika perintah dijalankan dengan benar maka ketika anda mengetikkan perintah git branch akan muncul branch-branch yang telah dibuat.</p>
+<p>Sekarang kita coba buat file baru, misalnya tambahkan file style.css lalu lakukan perintah git add dan git commit dengan pesan commit &ldquo;Added style.css fix&rdquo;. Selanjutnya coba berpindah kembali ke branch master, dan perhatikan bahwa file style.css tidak akan anda temukan karena kita membuatnya di branch fix-css. Cobalah untuk berpindah ke branch fix-css dan bisa anda lihat file style.css akan muncul kembali.</p>
+<p>Jika Anda merasa file style.css ini sudah siap dimasukkan ke branch master, Anda bisa melakukan merge. Merge berarti menggabungkan beberapa perubahan yang terdapat antar branch. Untuk kasus ini kita akan melakukan merging branch fix-css pada branch master dengan mengetikkan perintah</p>
+{% highlight bash %}
+git merge master fix-css
+{% endhighlight %}
+<p>Semua yang telah dijelaskan diatas adalah perintah-perintah dasar dalam penggunaan Git. Agar source kode yang anda buat dapt dilihat dan dikerjakan pula oleh orang lain Anda memerlukan server untuk menyimpan source kode Anda dan menginstall git diserver tersebut. Dengan demikian orang lain dapat melakukan cloning source kode dan melakukan perubahan masing-masing.</p>
+<h4 id="branch"><strong>Git Clone</strong></h4>
+<p>Misalkan anda ingin mengambil suatu file dalam git, Clone ini bisa di artikan mendownload atau memindahkan file dalam git ke folder lokal kita.. misalnya kita nge clone git dari github maka perintahnya seperti ini :</p>
+{% highlight bash %}
+git clone git@github.com:ferdhika31/folder-repository
+{% endhighlight %}
+<p>Nah, setelah mengetikkan perintah seperti itu. file akan di clone ke storage lokal kita.</p>
+<h4 id="branch"><strong>Git Push<br />
+</strong></h4>
+<p>Mengirimkan perubahan ke master, contoh perintahnya seperti ini :</p>
+{% highlight bash %}
+git push git@github.com:ferdhika31/folder-repository.git master
+{% endhighlight %}
+<p>Nah sekian dulu postingan kali ini.. semoga bermanfaat yaww.. :D Jika ada yang kurang dan salah dimengerti, mohon di maklum.. masih belajar.. :D</p>
+<p>Sumber : Berbagai Sumber di Internet</p>

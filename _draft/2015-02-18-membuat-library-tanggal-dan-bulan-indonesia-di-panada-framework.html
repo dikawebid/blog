@@ -1,0 +1,42 @@
+---
+layout: post
+status: publish
+disqus: y 
+share: y 
+publish: y
+title: 'PHP Snippet : Membuat Library Tanggal dan Bulan Indonesia di Panada Framework'
+author:
+  display_name: Ferdhika Yudira
+  login: ferdhika31
+  email: rpl4rt08@gmail.com
+  url: http://dika.web.id
+author_login: ferdhika31
+author_email: rpl4rt08@gmail.com
+author_url: http://dika.web.id
+wordpress_id: 329
+wordpress_url: http://blog.dika.web.id/?p=329
+date: '2015-02-18 21:20:08 +0700'
+date_gmt: '2015-02-18 14:20:08 +0700'
+categories:
+- Panada
+- Code Snippet
+tags:
+- snippet
+comments: []
+---
+<p>Malam kawan, posting koding lagi nih.. haha mumpung lagi bikin web kecil kecilan saya mau share cara buat library tanggal dan bulan format indonesia di panada framework, walaupun framework yang satu ini buatan indonesia saya iseng iseng buat library kecil kecilan :D oke langsung aja dah yaw..</p>
+<p><a href="http://blog.dika.web.id/wp-content/uploads/2015/02/panada_logo.png"><img class="aligncenter size-full wp-image-312" src="http://blog.dika.web.id/wp-content/uploads/2015/02/panada_logo.png" alt="panada_logo" width="293" height="53" /></a><br />
+Oh iya kalo belum tau apa itu Panada Framework bisa di lihat di artikel ini => <a href="/?p=311" target="_blank">Apa Itu Panada Framework?</a> kalo yang udah punya, yo mari kita lanjut :D</p>
+<p><!--more--></p>
+<p>Nih Source kode nya :</p>
+{% gist 04c4fdadc083fa16a5b6b077a78e9802 Tgl_indonesia.php %}
+<p>Save di folder Libraries ya bro.. :D</p>
+<p>Source penggunaannya di controller :</p>
+
+{% highlight default %}
+$this->library->tgl_indonesia("1997-08-31")->nama_hari()
+$this->library->tgl_indonesia("1997-08-31")->tgl_indo()
+{% endhighlight %}
+
+<p>Nah mudahkan? format tanggal harus date("Y-m-d")</p>
+<p>Sekian dulu yo, mau lanjut lagi nih.. semoga bermanfaat :D</p>

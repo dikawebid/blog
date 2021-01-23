@@ -42,39 +42,6 @@
                 appendString +=     '    </div>';
                 appendString +=     '</div>';
                 appendString += '</div>';
-                
-                // appendString += '<div class="blog-grid-item">';
-                // appendString += '   <div class="card">';
-                // appendString += '       <div class="card-header post-header"><div class="">';
-                // appendString += '           <span class="meta-footer-thumb">';
-                // appendString += '               <a href="/about"><img class="author-thumb" src="https://www.gravatar.com/avatar/8c2ef75f6fd262a0d4002961a9436e0f?s=250&amp;d=mm&amp;r=x" alt="Ferdhika Yudira"></a>'
-
-                // // appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
-                // // appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
-
-                // appendString += '           </span>';
-                // appendString += '           <span class="author-meta">';
-                // appendString += '               <span class="post-name"><a href="/about">Ferdhika Yudira</a></span><br/>';
-                // appendString += '               <span class="post-date">'+ item.date +'</span>';
-                // appendString += '               <span class="dot"></span>';
-                // appendString += '               <span class="post-read">';
-                // appendString += '                   '+item.read;
-                // appendString += '               </span>';
-                // appendString += '           </span>';
-                // appendString += '       </div></div>';
-                // appendString += '       <div class="card-body">';
-				// appendString += '       	<h2 class="card-title"><a href="'+item.url+'">' + item.title + '</a></h2>';
-				// appendString += '       	<h4 class="card-text">';
-				// appendString += '       		'+item.content;
-				// appendString += '       	</h4>';
-				// appendString += '       	<div class="metafooter">';
-				// appendString += '       		<div class="wrapfooter">';
-				// appendString += '       			<span class="post-read-more"><a href="'+item.url+'" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>';
-				// appendString += '       		</div>';
-				// appendString += '       	</div>';
-				// appendString += '       </div>';
-                // appendString += '   </div>';
-                // appendString += '</div>';
             }
 
             searchResults.innerHTML = appendString;

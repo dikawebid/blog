@@ -40,7 +40,13 @@
                 <span class="author-meta">
                 <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span> 
                 {% endif %}
-                <span class="post-date">{{ post.read }} - {{ post.date | date_to_string }}</span>
+                <!-- {% assign words = post.content | number_of_words %}
+                {% if words < 270 %}
+                    <span class="post-read">1 min read</span>
+                {% else %}
+                    <span class="post-read">{{ words | divided_by:135 }} mins read</span>
+                {% endif %} -->
+                <span class="post-date">{{ post.date | date_to_string }}</span>
                 </span>
                 <div class="clearfix"></div>
             </div>

@@ -77,4 +77,4 @@ Oke, dalam kasus kali ini saya akan menginstall sekaligus menambahkan launcher u
 
 Oh iya, konten diatas ini cuma jalan di environment `Unity` sama `GNOME`. Kalo pake environment lain, tinggal tambahin aja di bagian OnlyShowIn setelah titik koma.
 
-Sekian aja dah, semoga bermanfaat buat saya dan kalian postingan kali ini. :D
+Sekian aja dah, postingan kali ini. Semoga bermanfaat buat saya dan kalian :D

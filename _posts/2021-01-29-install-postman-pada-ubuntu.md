@@ -32,25 +32,7 @@ Oke, dalam kasus kali ini saya akan menginstall sekaligus menambahkan launcher u
     sudo mv Postman /usr/local
     ```
 
-4. Selanjutnya saya memasukkan source folder Postman ke path environment agar bisa diakses langsung tanpa harus masuk kedirektori installan Postman dulu. Saya menjalankan perintah dibawah untuk memasukkan ke file `.bashrc`. Kenapa ke file `.bashrc`? karena disini saya sering menggunakan terminal bash pada ubuntu saya.
-
-    ```bash
-    sudo echo 'export PATH=$PATH:/usr/local/Postman' >> ~/.bashrc
-    ```
-    untuk nge cek udah jalan atau nggaknya kamu cukup tutup lalu buka lagi terminalnya, udah gitu ketik aja perintah :
-    ```bash
-    Postman
-    ```
-    kalo berhasil, bakal seperti ini :
-
-    <figure class="text-center">
-        <img alt="Terminal Postman" src="/wp-content/uploads/2021/01/terminal-postman.png?raw=true" width="60%">
-    </figure>
-
-    dan aplikasi Postman akan kebuka di window baru.
-
-
-5. Nah kalo udah selesai dengan langkah-langkah diatas, mari kita bikin launcher nya biar ga ngetik-ngetik lagi di terminal pas mau buka Postman-nya dengan cara menjalankan perintah dibawah:
+4. Nah kalo udah selesai dengan langkah-langkah diatas, mari kita bikin launcher nya biar ga ngetik-ngetik lagi di terminal pas mau buka Postman-nya dengan cara menjalankan perintah dibawah:
 
     ```bash
     sudo nano .local/share/applications/postman.desktop
